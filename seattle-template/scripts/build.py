@@ -425,12 +425,13 @@ SOCIAL_ICONS = {
 }
 
 
-def social_html(social):
+def social_html(social, show=None):
+    # show: optional list of keys that get a visible footer icon; the rest stay in schema sameAs only.
     if not social:
         return ""
     out = []
     for k, url in social.items():
-        if k not in SOCIAL_ICONS or not url:
+        if k not in SOCIAL_ICONS or not url or (show is not None and k not in show):
             continue
         label, path = SOCIAL_ICONS[k]
         out.append(f'<a href="{htmlmod.escape(url)}" target="_blank" rel="noopener" aria-label="{label}" title="{label}"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="{path}"/></svg></a>')
@@ -631,7 +632,7 @@ def fields(loc):
         "body_class": ("theme-" + loc["theme"]) if loc.get("theme") else "",
         "subnav": (SUBNAV if loc.get("subnav") else "") + promo_bar(loc),
         **{"ico_" + k: v for k, v in ICONS.items()},
-        "social_links": social_html(loc.get("social")),
+        "social_links": social_html(loc.get("social"), loc.get("social_show")),
         "social_sameas": "".join(f',"{htmlmod.escape(u, quote=True)}"' for u in (loc.get("social") or {}).values() if u),
         "sms_digits": re.sub(r"\D", "", loc.get("sms") or phone),
         "rating": REVIEWS.get("rating", ""), "review_count": REVIEWS.get("count", ""),
