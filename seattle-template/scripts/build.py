@@ -419,6 +419,7 @@ SOCIAL_ICONS = {
     "chamber": ("Chamber of Commerce", "M12 2 2 7v2h20V7zM4 11v7h3v-7zm6.5 0v7h3v-7zM17 11v7h3v-7zM2 20v2h20v-2z"),
     "merchantcircle": ("MerchantCircle", "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-5 14V8h2.2L12 12l2.8-4H17v8h-2.2v-4.6L12 15.2l-2.8-3.8V16z"),
     "ezlocal": ("EZlocal", "M5 3h11v3H8.5v4H15v3H8.5v5H16v3H5zm13 9h2v9h-2z"),
+    "provenexpert": ("ProvenExpert", "M12 2l2.9 6.3 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.3 1.3-6.6L2.5 9.1l6.6-.8L12 2z"),
     "showmelocal": ("ShowMeLocal", "M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"),
     "locksmithyp": ("LocksmithYP", "M15 2a7 7 0 0 0-6.6 9.3L2 17.7V22h4.3v-2.2h2.2v-2.2h2.2l2-2A7 7 0 1 0 15 2zm2 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"),
 }
