@@ -47,6 +47,19 @@ THEME_PRELOADS = {  # font preloads in base.html, per theme with its own fonts
                  ("/fonts/barlow-600.woff2", "/fonts/figtree-600.woff2")],
 }
 
+
+
+def themed(rel, f):
+    """Path of a template file, preferring template/themes/<theme>/<rel> when the site's theme ships its own."""
+    theme = (f.get("body_class") or "").replace("theme-", "")
+    p = T / "themes" / theme / rel
+    return p if theme and p.exists() else T / rel
+
+
+def base_tpl(f):
+    return themed("base.html", f).read_text()
+
+
 FORM = (T / "form.html").read_text()
 BOOK_FORM = (T / "book-form.html").read_text()
 LOCATIONS = json.loads((ROOT / "data" / "locations.json").read_text())
@@ -367,7 +380,7 @@ def render_blog(f):
         })
         for k in NAV_KEYS:
             pf[f"cur_{k}"] = 'aria-current="page"' if k == "blog" else ""
-        out.append((f"/blog/{p['slug']}/", sub(BASE, fit_meta(pf))))
+        out.append((f"/blog/{p['slug']}/", sub(base_tpl(pf), fit_meta(pf))))
         cards.append(card(p, f))
     pf = dict(f)
     pf.update({
@@ -379,7 +392,7 @@ def render_blog(f):
     })
     for k in NAV_KEYS:
         pf[f"cur_{k}"] = 'aria-current="page"' if k == "blog" else ""
-    out.append(("/blog/", sub(BASE, fit_meta(pf))))
+    out.append(("/blog/", sub(base_tpl(pf), fit_meta(pf))))
     return out
 
 
@@ -555,7 +568,7 @@ def render_area(name, kind, f):
     pf["content"] = sub(AREA_TPL, pf)
     for k in NAV_KEYS:
         pf[f"cur_{k}"] = 'aria-current="page"' if k == "areas" else ""
-    out = sub(BASE, fit_meta(pf))
+    out = sub(base_tpl(pf), fit_meta(pf))
     leftover = re.findall(r"{{\w+}}", out)
     if leftover:
         raise SystemExit(f"{f['domain']}{path}: unreplaced {sorted(set(leftover))}")
@@ -755,7 +768,7 @@ def render_product(p, f):
     pf["content"] = autolink_brands(sub(PRODUCT_TPL, pf))
     for k in NAV_KEYS:
         pf[f"cur_{k}"] = 'aria-current="page"' if k == "services" else ""
-    out = sub(BASE, fit_meta(pf))
+    out = sub(base_tpl(pf), fit_meta(pf))
     # Service pages share their own photo as og/twitter image (social link previews)
     pimg = f"https://www.{f['domain']}/img/products/{p['image']}"
     out = out.replace(f'<meta property="og:image" content="https://www.{f["domain"]}/img/og.jpg">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">',
@@ -769,7 +782,7 @@ def render_product(p, f):
 
 def render_page(slug, f):
     tpl_name, nav_key = PAGES[slug]
-    src = (T / "pages" / f"{tpl_name}.html").read_text()
+    src = themed(f"pages/{tpl_name}.html", f).read_text()
     title = re.search(r"<!-- title: (.*?) -->", src).group(1)
     if slug == "" and f.get("home_title"):
         title = f["home_title"]  # optional per-site homepage title override
@@ -792,7 +805,7 @@ def render_page(slug, f):
     })
     for k in NAV_KEYS:
         pf[f"cur_{k}"] = 'aria-current="page"' if k == nav_key else ""
-    out = sub(BASE, fit_meta(pf))
+    out = sub(base_tpl(pf), fit_meta(pf))
     leftover = re.findall(r"{{\w+}}", out)
     if leftover:
         raise SystemExit(f"{f['domain']}{path}: unreplaced {sorted(set(leftover))}")

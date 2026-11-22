@@ -592,6 +592,128 @@ footer{padding:3rem 0}
 footer h3{font-size:1.05rem}
 .drawer-head{text-transform:none;letter-spacing:0;font-size:1.25rem}
 .drawer .group{text-transform:none;letter-spacing:0}
+
+/* ======== keystone v2: own page structure (themes/keystone/base.html + pages/home.html) ======== */
+.kbar{background:var(--ink);color:#DDE6E1;font-size:.86rem}
+.kbar .wrap{display:flex;justify-content:space-between;gap:1rem;padding:.45rem 0}
+@media (max-width:640px){.kbar .wrap{justify-content:center}.kbar span+span{display:none}}
+.khead .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem;min-height:0;padding:.9rem 0}
+.khead .brand{flex-direction:column;gap:.3rem;margin:0;text-align:center}
+.khead .brand img.logo{width:78px;height:78px}
+.khead .brand b{font-size:1.05rem}
+.knav{display:flex;align-items:center;gap:.25rem}
+.knav-r{justify-content:flex-end}
+.knav a:not(.call){text-decoration:none;color:var(--ink);font-weight:500;padding:.5rem .7rem;border-radius:8px;white-space:nowrap}
+.knav a:not(.call):hover{background:var(--tint)}
+.knav a[aria-current]:not(.call){color:var(--sage);box-shadow:inset 0 -2px 0 var(--signal);border-radius:0}
+.knav .call{margin-left:.6rem}
+.khead .burger,.khead .kcall-m{display:none}
+@media (max-width:1040px){
+  .khead .wrap{grid-template-columns:auto 1fr auto auto;gap:.6rem;padding:.6rem 0}
+  .knav{display:none}
+  .khead .brand{flex-direction:row;gap:.6rem;text-align:left}
+  .khead .brand img.logo{width:52px;height:52px}
+  .khead .burger{display:inline-flex;grid-column:4}
+  .khead .kcall-m{display:inline-flex;grid-column:3;padding:.7rem .8rem}
+}
+
+/* hero: headline + call-back form side by side, then a strip of real job photos */
+.khero{background:linear-gradient(180deg,var(--tint) 0,var(--tint) calc(100% - 7rem),#fff calc(100% - 7rem));padding:3.25rem 0 0}
+.khero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:3rem;align-items:start}
+.khero h1{font-size:clamp(2.1rem,4.2vw,3.25rem);max-width:18ch;margin:0}
+.khero .lede{font-size:1.12rem;color:var(--steel);margin:1.1rem 0 1.6rem;max-width:52ch}
+.kcta{display:flex;flex-wrap:wrap;gap:.6rem;margin:0;max-width:none}
+.kcta .call{font-size:1.15rem;padding:.9rem 1.5rem}
+.kbtn{display:inline-flex;align-items:center;text-decoration:none;font-weight:600;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:.7rem 1.25rem;background:transparent;transition:background-color .2s ease}
+.kbtn:hover{background:var(--tint)}
+.khero .kbtn:hover{background:#fff}
+.kfacts{list-style:none;margin:1.75rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.45rem 1.5rem;max-width:34rem;font-weight:500}
+.kfacts li{display:flex;gap:.6rem;align-items:baseline}
+.kfacts li::before{content:"";flex:none;width:.45rem;height:.8rem;border:solid var(--sage);border-width:0 3px 3px 0;transform:rotate(45deg) translateY(-2px)}
+.kform{background:#fff;border:1px solid var(--panel);border-radius:20px;padding:1.6rem 1.6rem 1.4rem;box-shadow:0 18px 40px -28px rgba(31,47,42,.55)}
+.kform h2{font-size:1.45rem;margin:0 0 .35rem;max-width:none}
+.kform>p{color:var(--steel);margin:0 0 1rem;font-size:.98rem}
+.kform .lead{max-width:none;gap:.7rem}
+.kstrip{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr 1fr;gap:1rem;margin-top:3rem;align-items:end}
+.kstrip img{width:100%;height:230px;object-fit:cover;border-radius:16px;display:block}
+.kstrip picture img{height:280px}
+.kstrip>img:nth-of-type(2){height:260px}
+@media (max-width:900px){
+  .khero{padding-top:2rem}
+  .khero-grid{grid-template-columns:1fr;gap:2rem}
+  .kstrip{grid-template-columns:1fr 1fr;margin-top:2rem}
+  .kstrip img,.kstrip picture img,.kstrip>img:nth-of-type(2){height:170px}
+  .kstrip>img:nth-of-type(n+2){display:none}
+  .kfacts{grid-template-columns:1fr}
+}
+
+/* sections */
+.ksec{padding:4.5rem 0}
+main>section.ksec:nth-of-type(even){background:#fff}
+main>section.ksec.ktint,main>section.ktint{background:var(--paper)}
+.ksub{color:var(--steel);font-size:1.08rem;max-width:60ch;margin:-.6rem 0 2rem}
+.kall{margin:2.25rem 0 0;max-width:none}
+
+/* service directory: three columns, photo + linked list */
+.kdirs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
+.kdir-img{display:block;border-radius:18px;overflow:hidden}
+.kdir-img img{width:100%;height:210px;object-fit:cover;display:block;transition:transform .4s ease}
+.kdir-img:hover img{transform:scale(1.03)}
+.kdir h3{font-size:1.3rem;margin:1.1rem 0 .4rem}
+.kdir h3 a{text-decoration:none}
+.kdir p{color:var(--steel);font-size:.97rem;margin:0 0 .8rem}
+.kdir ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--panel)}
+.kdir li{border-bottom:1px solid var(--panel)}
+.kdir li a{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem .15rem;text-decoration:none!important;font-weight:500}
+.kdir li a::after{content:"";flex:none;width:.5rem;height:.5rem;border:solid var(--sage);border-width:2px 2px 0 0;transform:rotate(45deg)}
+.kdir li a:hover{color:var(--sage)}
+@media (max-width:900px){.kdirs{grid-template-columns:1fr;gap:2.5rem}.kdir-img img{height:190px}}
+
+/* split blocks */
+.ksplit{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:3.5rem;align-items:center}
+.ksplit.krev{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.kphoto{margin:0}
+.kphoto img{width:100%;height:auto;max-height:520px;object-fit:cover;border-radius:22px;display:block}
+.kticks{list-style:none;margin:1.25rem 0 0;padding:0;display:grid;gap:.6rem}
+.kticks li{position:relative;padding-left:1.6rem}
+.kticks li::before{content:"";position:absolute;left:.25rem;top:.3rem;width:.45rem;height:.8rem;border:solid var(--sage);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.kmap{aspect-ratio:1/1;max-width:none;border-radius:22px;overflow:hidden;border:1px solid var(--panel)}
+@media (max-width:900px){.ksplit,.ksplit.krev{grid-template-columns:1fr;gap:2rem}.kphoto img{max-height:320px}.kmap{aspect-ratio:4/3}}
+
+/* steps: a real sequence, laid out across */
+.ksteps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;counter-reset:k}
+.ksteps li{counter-increment:k;position:relative;padding-top:3.4rem;border-top:2px solid var(--sage)}
+.ksteps li::before{content:counter(k);position:absolute;top:.9rem;left:0;font-family:"Bitter","Bitter Fallback",serif;font-weight:700;font-size:1.6rem;line-height:1;color:var(--sage)}
+.ksteps strong{display:block;font-size:1.15rem;margin-bottom:.35rem}
+.ksteps span{color:var(--steel)}
+@media (max-width:800px){.ksteps{grid-template-columns:1fr;gap:1.5rem}}
+
+/* faq two columns, closing band */
+.kfaq{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:3rem;align-items:start}
+@media (max-width:820px){.kfaq{grid-template-columns:1fr;gap:1rem}}
+.kband{text-align:center;padding:4rem 0}
+.kband h2,.kband p{margin-inline:auto}
+.kband .kcta{justify-content:center;margin-top:1.5rem}
+
+/* inner pages: centred page heads */
+.hero.sub{text-align:center}
+.hero.sub h1,.hero.sub .lede{margin-inline:auto}
+.hero.sub .bignum{display:inline-flex}
+.hero.sub .facts,.hero.sub .cta-row{justify-content:center}
+
+/* footer: light, logo colours */
+footer{background:var(--paper);color:var(--steel);border-top:1px solid var(--panel)}
+footer h3{color:var(--ink)}
+footer a{color:var(--ink)}
+footer a:hover{color:var(--sage)}
+footer .legal{border-top-color:var(--panel)}
+footer .pay .brands li{border-color:var(--panel);color:var(--steel)}
+.social a{background:#fff;color:var(--ink);border:1px solid var(--panel)}
+
+.gallery{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));grid-auto-rows:240px}
+.gallery figure:first-child{grid-column:span 1;grid-row:span 1}
+.kform .lead label:has(input[type=checkbox]){display:block;font-weight:400;font-size:.9rem;line-height:1.5}
+.kform .lead label:has(input[type=checkbox]) input{width:auto;margin-right:.5rem;vertical-align:middle}
 </style>
 <script type="application/ld+json">
 {
@@ -638,30 +760,30 @@ footer h3{font-size:1.05rem}
 <body class="theme-keystone">
 <div class="progress" aria-hidden="true"></div>
 
-<header class="top">
+<div class="kbar"><div class="wrap"><span>Open 24 hours, every day</span><span>Mobile locksmith in Garner, NC 27529</span></div></div>
+<header class="top khead">
   <div class="wrap">
+    <nav class="knav knav-l" aria-label="Services">
+      <a href="/emergency-locksmith/" >Emergency</a>
+      <a href="/automotive-locksmith/" >Car &amp; keys</a>
+      <a href="/residential-locksmith/" >Home</a>
+      <a href="/commercial-locksmith/" >Business</a>
+    </nav>
     <a class="brand" href="/" aria-label="Garner Locksmith home">
       <img class="logo" src="/img/logo-104.webp?v=9ca9d28b" alt="Garner Locksmith logo" width="52" height="52">
-      <span class="wm"><b><em>Garner</em> Locksmith</b><small>Since 2024 · Garner, NC · 24 hours</small></span>
+      <span class="wm"><b><em>Garner</em> Locksmith</b></span>
     </a>
-    <a class="call" href="tel:+19198670279" aria-label="Call 919-867-0279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg><span>919-867-0279</span></a>
+    <nav class="knav knav-r" aria-label="Company">
+      <a href="/services/" >All services</a>
+      <a href="/about/" >About</a>
+      <a href="/contact/" >Contact</a>
+      <a class="call" href="tel:+19198670279" aria-label="Call 919-867-0279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg><span>919-867-0279</span></a>
+    </nav>
+    <a class="call kcall-m" href="tel:+19198670279" aria-label="Call 919-867-0279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg></a>
     <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav class="subnav" aria-label="Sections">
-  <div class="wrap">
-    <a href="/" aria-current="page">Home</a>
-    <a href="/emergency-locksmith/" >Emergency</a>
-    <a href="/automotive-locksmith/" >Car</a>
-    <a href="/car-key-replacement/" >Car keys</a>
-    <a href="/residential-locksmith/" >Home &amp; rekey</a>
-    <a href="/commercial-locksmith/" >Business</a>
-    <a href="/services/" >All services</a>
-    <a href="/service-areas/" >Areas</a>
-    <a href="/about/" >About</a>
-    <a href="/contact/" >Contact</a>
-  </div>
-</nav>
+
 <div class="scrim" hidden></div>
 <nav class="drawer" id="menu" aria-label="Main" hidden>
   <div class="drawer-head">
@@ -697,283 +819,23 @@ footer h3{font-size:1.05rem}
 </nav>
 
 <main>
-<section class="hero photo" aria-labelledby="h1">
-  <picture><source media="(max-width:700px)" srcset="/img/gallery/g0-640.webp?v=ca5eecda"><img class="hero-img" src="/img/gallery/g0.webp?v=9683409d" alt="Garner Locksmith technician holding a new car key made on site in Garner, NC" width="1400" height="1050" fetchpriority="high" decoding="sync"></picture>
-  <div class="wrap">
-    <p class="rating badge"><span class="stars">★★★★★</span> <b>4.6</b> · <a href="https://maps.google.com/?cid=4019033473206096131" target="_blank" rel="noopener">21 Google reviews</a></p>
-    <h1 id="h1">Garner Locksmith: 24-hour locksmith in <a href="https://en.wikipedia.org/wiki/Garner,_North_Carolina" rel="noopener" style="color:inherit;text-decoration:none">Garner</a>, NC</h1>
-    <p class="lede">Locked out of your car, home or office? Lost your only car key? A Garner Locksmith technician is on the road across Garner right now, with the tools on the van to open the door, cut and program the key, or change the lock on the spot.</p>
-    <a class="bignum" href="tel:+19198670279"><span>Call now, 24 hours a day</span>919-867-0279</a>
-    <p class="cta-row"><a class="sms" href="sms:+19198670279?&body=Hi%2C%20I%20need%20a%20locksmith%20in%20Garner">Text us</a><a class="ghost" href="/book/">Book online</a></p>
-    <ul class="facts">
-      <li>Fast arrival anywhere in Garner</li>
-      <li>Free estimate before work starts</li>
-      <li>Local business · since 2024</li>
-      <li>Car keys &amp; fobs cut and programmed on site</li>
-    </ul>
-  </div>
-  <div class="door" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-</section>
-
-<section class="trust" aria-label="Why customers trust Garner Locksmith">
-  <div class="wrap">
-    <ul>
-      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9z" fill="currentColor" stroke="none"/></svg></span><div><b>4.6 on Google</b><span>21 verified reviews</span></div></li>
-      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>24 hours, 7 days</b><span>Real dispatcher, every call</span></div></li>
-      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>Local business</b><span>Serving Garner since 2024</span></div></li>
-      <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg></span><div><b>Free estimate</b><span>Firm price before any work</span></div></li>
-    </ul>
-  </div>
-</section>
-
-<section id="services" aria-labelledby="h-services">
-  <div class="wrap">
-    <h2 id="h-services">Locksmith services in Garner</h2>
-    <div class="grid">
-      <div class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Emergency lockout, 24/7</h3><p>Locked out of your car, house or business at any hour. Non-destructive entry in most cases — we open the lock, we don't break it.</p><a class="more" href="/emergency-locksmith/">Emergency lockout in Garner</a><a class="mini-call" href="tel:+19198670279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg> Call</a></div>
-      <div class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M6 17l1.5-5h9L18 17M4 17v2h3v-2M17 17v2h3v-2"/><path d="M7.5 12 9 8h6l1.5 4"/><circle cx="8" cy="17" r="1"/><circle cx="16" cy="17" r="1"/></svg></span><h3>Automotive locksmith</h3><p>Car lockouts, lost keys, ignition repair, broken key extraction. All makes and models, right where the car is parked.</p><a class="more" href="/automotive-locksmith/">Car locksmith in Garner</a><a class="mini-call" href="tel:+19198670279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg> Call</a></div>
-      <div class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M17 12v3M20 12v2"/></svg></span><h3>Car key replacement &amp; key fobs</h3><p>Transponder keys, remote-head keys, smart keys and push-to-start fobs cut and programmed on site, usually for far less than the dealer.</p><a class="more" href="/car-key-replacement/">Car keys in Garner</a><a class="mini-call" href="tel:+19198670279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg> Call</a></div>
-      <div class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><h3>Residential locksmith</h3><p>House lockouts, lock rekeying, deadbolt and smart lock installation, lock repair, patio and garage door locks.</p><a class="more" href="/residential-locksmith/">Home locksmith in Garner</a><a class="mini-call" href="tel:+19198670279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg> Call</a></div>
-      <div class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="14" r="4"/><path d="M12.5 11 20 3.5M17 7l2 2M15 9l2 2"/></svg></span><h3>Lock rekeying</h3><p>Just moved in, lost a key, or an ex-roommate still has one? We rekey every lock to one new key, in one visit, without replacing the hardware.</p><a class="more" href="/lock-rekeying/">Rekeying in Garner</a><a class="mini-call" href="tel:+19198670279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg> Call</a></div>
-      <div class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h3M13 7h3M8 11h3M13 11h3M8 15h3M13 15h3M10 21v-3h4v3"/></svg></span><h3>Commercial locksmith</h3><p>Master key systems, high-security locks, panic bars, access control, storefront and office lockouts, mailbox and cabinet locks.</p><a class="more" href="/commercial-locksmith/">Business locksmith in Garner</a><a class="mini-call" href="tel:+19198670279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg> Call</a></div>
-    </div>
-    <p style="margin-top:1.5rem"><a class="more" href="/services/" style="font-weight:600;text-decoration:none;border-bottom:2px solid var(--signal)">See all 20 services</a></p>
-  </div>
-</section>
-
-<section class="seam" aria-labelledby="h-mobile">
-  <div class="wrap two">
-    <div>
-      <h2 id="h-mobile">Garner Locksmith: the mobile locksmith shop that comes to you</h2>
-      <p>Garner Locksmith is a mobile locksmith company serving Garner, NC 27529. There is no counter to stand at and no car to tow. A Garner locksmith drives to your home, your business or wherever your vehicle is parked, with the key machines, programmers, locks and door hardware already on the van.</p>
-      <p>That is why most locksmith jobs in Garner are finished in one visit. Locked out? Our locksmith opens the door. Lost the only car key? We cut and program a new one on the spot. Just moved in? Garner Locksmith rekeys every lock to one new key before you unpack. You hear the price before any work starts.</p>
-      <p><a class="more" href="tel:+19198670279" style="font-weight:600;text-decoration:none;border-bottom:2px solid var(--signal)">Call Garner Locksmith: 919-867-0279</a> · open 24 hours, every day · major credit cards accepted</p>
-    </div>
-    <div>
-      <h3>What a locksmith in Garner can do at your door</h3>
-      <ul class="why">
-        <li><b>Lockouts</b><span>Houses, apartments, offices, storefronts, cars and trunks opened without damage.</span></li>
-        <li><b>Lock work</b><span>Locks repaired, rekeyed, changed or upgraded, from one deadbolt to a whole building.</span></li>
-        <li><b>Car keys</b><span>Car keys and key fobs cut and programmed, ignitions repaired, broken keys removed.</span></li>
-        <li><b>Upfront quotes</b><span>A firm quote from the locksmith before the job starts, and no charge for the estimate.</span></li>
+<section class="khero" aria-labelledby="h1">
+  <div class="wrap khero-grid">
+    <div class="khero-copy">
+      <p class="rating badge"><span class="stars">★★★★★</span> <b>4.6</b> · <a href="https://maps.google.com/?cid=4019033473206096131" target="_blank" rel="noopener">21 Google reviews</a></p>
+      <h1 id="h1">Garner Locksmith: <span style="white-space:nowrap">24-hour</span> locksmith in <a href="https://en.wikipedia.org/wiki/Garner,_North_Carolina" rel="noopener" style="color:inherit;text-decoration:none">Garner</a>, NC</h1>
+      <p class="lede">Locked out of your car, home or office? Lost your only car key? A Garner Locksmith technician is on the road across Garner right now, with the tools on the van to open the door, cut and program the key, or change the lock on the spot.</p>
+      <p class="kcta"><a class="call" href="tel:+19198670279">Call 919-867-0279</a><a class="kbtn" href="sms:+19198670279?&body=Hi%2C%20I%20need%20a%20locksmith%20in%20Garner">Text us</a><a class="kbtn" href="/book/">Book online</a></p>
+      <ul class="kfacts">
+        <li>Fast arrival anywhere in Garner</li>
+        <li>Free estimate before work starts</li>
+        <li>Car keys &amp; fobs made on site</li>
+        <li>Local business since 2024</li>
       </ul>
     </div>
-  </div>
-</section>
-
-<section class="seam" aria-labelledby="h-fourways">
-  <div class="wrap">
-    <h2 id="h-fourways">Four kinds of locksmith service in Garner, NC</h2>
-    <p>Whatever is locked, jammed, lost or broken, one call to Garner Locksmith covers it. Here is what our Garner locksmiths handle every week.</p>
-    <div class="brandgrid">
-      <div class="brandcol"><h3><a href="/automotive-locksmith/">Automotive locksmith Garner</a></h3><p>Car lockouts, trunk lockouts, car key replacement, spare car keys, transponder keys, key fob and smart key programming, laser-cut keys, ignition repair and replacement, broken key extraction, car door and trunk lock repair.</p></div>
-      <div class="brandcol"><h3><a href="/residential-locksmith/">Residential locksmith Garner</a></h3><p>House and apartment lockouts, lock rekeying, lock changes, deadbolt installation, smart locks and keypad locks, lock repair, high-security locks, mailbox and garage door locks, home safes, house key duplication.</p></div>
-      <div class="brandcol"><h3><a href="/commercial-locksmith/">Commercial locksmith Garner</a></h3><p>Business lockouts, storefront door locks, master key systems, access control, panic bars and exit devices, door closers, commercial lock rekeying and lock changes, file cabinet and desk locks, office safes, building key copying.</p></div>
-      <div class="brandcol"><h3><a href="/emergency-locksmith/">Emergency locksmith Garner</a></h3><p>24-hour lockout service for cars, homes and businesses, lost key replacement, broken keys, break-in repairs and emergency lock changes, nights, weekends and holidays.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="seam" aria-labelledby="h-local">
-  <div class="wrap two">
-    <div>
-      <h2 id="h-local">A local locksmith for every part of Garner</h2>
-      <p>Garner Locksmith works only around Garner, so the locksmith who answers your call already knows the roads. We are on US-70 and Timber Drive every day, around White Oak Crossing and downtown Garner on Main Street, along Aversboro Road, Vandora Springs Road and Benson Road (NC-50), out by Lake Benson Park and down toward the Cleveland community off NC-42.</p>
-      <p>Whether you are locked out of a car in a shopping center lot off I-40, need the locks rekeyed on a house you just closed on, or manage a storefront that needs a new lock before opening time, a Garner locksmith can usually be with you within the hour.</p>
-    </div>
-    <div>
-      <h3>Why Garner drivers, homeowners and businesses call us</h3>
-      <ul class="why">
-        <li><b>Local</b><span>A locksmith based in Garner, NC 27529, not a call center in another state.</span></li>
-        <li><b>24 hours</b><span>Garner Locksmith answers day and night, weekends and holidays included.</span></li>
-        <li><b>Real reviews</b><span>Rated 4.6 on Google by customers in Garner. Read them below.</span></li>
-        <li><b>One visit</b><span>Keys, locks and programmers are on the van, so most jobs are done on the first trip.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="seam" aria-labelledby="h-products">
-  <div class="wrap">
-    <h2 id="h-products">Popular locksmith services</h2>
-    <div class="grid">
-      <div class="svc pcard"><a href="/emergency-lockout-service/"><img src="/img/products/emergency-lockout-service.webp?v=aae14c8d" alt="24/7 Emergency Lockout Service in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/emergency-lockout-service/">24/7 Emergency Lockout Service</a></h3><p>Garner, NC</p><a class="more" href="/emergency-lockout-service/">24/7 Emergency Lockout Service details</a></div>
-      <div class="svc pcard"><a href="/car-lockout-service/"><img src="/img/products/car-lockout-service.webp?v=9da49f2d" alt="Car Lockout Service in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/car-lockout-service/">Car Lockout Service</a></h3><p>Garner, NC</p><a class="more" href="/car-lockout-service/">Car Lockout Service details</a></div>
-      <div class="svc pcard"><a href="/car-key-replacement/"><img src="/img/products/car-key-replacement.webp?v=6ab0977f" alt="Car Key Replacement in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/car-key-replacement/">Car Key Replacement</a></h3><p>Garner, NC</p><a class="more" href="/car-key-replacement/">Car Key Replacement details</a></div>
-      <div class="svc pcard"><a href="/key-fob-programming/"><img src="/img/products/key-fob-programming.webp?v=7b1d8dfb" alt="Key Fob &amp; Transponder Programming in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/key-fob-programming/">Key Fob &amp; Transponder Programming</a></h3><p>Garner, NC</p><a class="more" href="/key-fob-programming/">Key Fob &amp; Transponder Programming details</a></div>
-      <div class="svc pcard"><a href="/ignition-repair/"><img src="/img/products/ignition-repair.webp?v=e6337342" alt="Ignition Repair &amp; Replacement in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/ignition-repair/">Ignition Repair &amp; Replacement</a></h3><p>Garner, NC</p><a class="more" href="/ignition-repair/">Ignition Repair &amp; Replacement details</a></div>
-      <div class="svc pcard"><a href="/broken-key-extraction/"><img src="/img/products/broken-key-extraction.webp?v=3a01aba5" alt="Broken Key Extraction in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/broken-key-extraction/">Broken Key Extraction</a></h3><p>Garner, NC</p><a class="more" href="/broken-key-extraction/">Broken Key Extraction details</a></div>
-      <div class="svc pcard"><a href="/lock-rekeying/"><img src="/img/products/lock-rekeying.webp?v=4d4c3a2b" alt="Lock Rekeying in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/lock-rekeying/">Lock Rekeying</a></h3><p>Garner, NC</p><a class="more" href="/lock-rekeying/">Lock Rekeying details</a></div>
-      <div class="svc pcard"><a href="/deadbolt-lock-installation/"><img src="/img/products/deadbolt-lock-installation.webp?v=a5a175eb" alt="Deadbolt &amp; Lock Installation in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/deadbolt-lock-installation/">Deadbolt &amp; Lock Installation</a></h3><p>Garner, NC</p><a class="more" href="/deadbolt-lock-installation/">Deadbolt &amp; Lock Installation details</a></div>
-      <div class="svc pcard"><a href="/smart-lock-installation/"><img src="/img/products/smart-lock-installation.webp?v=25a0bc5d" alt="Smart Lock Installation in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/smart-lock-installation/">Smart Lock Installation</a></h3><p>Garner, NC</p><a class="more" href="/smart-lock-installation/">Smart Lock Installation details</a></div>
-      <div class="svc pcard"><a href="/commercial-locksmith-access-control/"><img src="/img/products/commercial-locksmith-access-control.webp?v=6ab4a0c9" alt="Commercial Locksmith &amp; Access Control in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/commercial-locksmith-access-control/">Commercial Locksmith &amp; Access Control</a></h3><p>Garner, NC</p><a class="more" href="/commercial-locksmith-access-control/">Commercial Locksmith &amp; Access Control details</a></div>
-      <div class="svc pcard"><a href="/safe-opening/"><img src="/img/products/safe-opening.webp?v=2a3fa6a6" alt="Safe Opening &amp; Safe Lockout in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/safe-opening/">Safe Opening &amp; Safe Lockout</a></h3><p>Garner, NC</p><a class="more" href="/safe-opening/">Safe Opening &amp; Safe Lockout details</a></div>
-      <div class="svc pcard"><a href="/key-duplication/"><img src="/img/products/key-duplication.webp?v=c8c90e21" alt="Key Duplication &amp; Cutting in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/key-duplication/">Key Duplication &amp; Cutting</a></h3><p>Garner, NC</p><a class="more" href="/key-duplication/">Key Duplication &amp; Cutting details</a></div>
-      <div class="svc pcard"><a href="/house-lockout-service/"><img src="/img/products/house-lockout-service.webp?v=e5b0ffb5" alt="House Lockout Service in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/house-lockout-service/">House Lockout Service</a></h3><p>Garner, NC</p><a class="more" href="/house-lockout-service/">House Lockout Service details</a></div>
-      <div class="svc pcard"><a href="/commercial-lockout-service/"><img src="/img/products/commercial-lockout-service.webp?v=2d52c6e2" alt="Commercial Lockout Service in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/commercial-lockout-service/">Commercial Lockout Service</a></h3><p>Garner, NC</p><a class="more" href="/commercial-lockout-service/">Commercial Lockout Service details</a></div>
-      <div class="svc pcard"><a href="/spare-car-key/"><img src="/img/products/spare-car-key.webp?v=091556e6" alt="Spare Car Key Duplication in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/spare-car-key/">Spare Car Key Duplication</a></h3><p>Garner, NC</p><a class="more" href="/spare-car-key/">Spare Car Key Duplication details</a></div>
-      <div class="svc pcard"><a href="/car-door-lock-repair/"><img src="/img/products/car-door-lock-repair.webp?v=2b70f69d" alt="Car Door &amp; Trunk Lock Repair in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/car-door-lock-repair/">Car Door &amp; Trunk Lock Repair</a></h3><p>Garner, NC</p><a class="more" href="/car-door-lock-repair/">Car Door &amp; Trunk Lock Repair details</a></div>
-      <div class="svc pcard"><a href="/lock-repair/"><img src="/img/products/lock-repair.webp?v=5b8ec573" alt="Lock Repair in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/lock-repair/">Lock Repair</a></h3><p>Garner, NC</p><a class="more" href="/lock-repair/">Lock Repair details</a></div>
-      <div class="svc pcard"><a href="/high-security-locks/"><img src="/img/products/high-security-locks.webp?v=37e49541" alt="High-Security Lock Installation in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/high-security-locks/">High-Security Lock Installation</a></h3><p>Garner, NC</p><a class="more" href="/high-security-locks/">High-Security Lock Installation details</a></div>
-      <div class="svc pcard"><a href="/master-key-systems/"><img src="/img/products/master-key-systems.webp?v=316e1760" alt="Master Key Systems in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/master-key-systems/">Master Key Systems</a></h3><p>Garner, NC</p><a class="more" href="/master-key-systems/">Master Key Systems details</a></div>
-      <div class="svc pcard"><a href="/panic-bar-installation/"><img src="/img/products/panic-bar-installation.webp?v=0ededb5e" alt="Panic Bar &amp; Exit Device Installation in Garner, NC" loading="lazy" decoding="async" fetchpriority="low" width="500" height="500"></a><h3><a href="/panic-bar-installation/">Panic Bar &amp; Exit Device Installation</a></h3><p>Garner, NC</p><a class="more" href="/panic-bar-installation/">Panic Bar &amp; Exit Device Installation details</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="seam reviews" aria-labelledby="h-reviews">
-  <div class="wrap">
-    <div class="rev-head">
-      <h2 id="h-reviews">What Garner customers say</h2>
-      <p class="rating"><span class="stars">★★★★★</span> <b>4.6</b> rating · <a href="https://maps.google.com/?cid=4019033473206096131" target="_blank" rel="noopener">21 Google reviews</a></p>
-    </div>
-    <div class="grid revs">
-      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“We lost the keys to our front door. I called and they changed out the locks &amp; hardware and all of this was done within 45 minutes. Gary was the locksmith and he was friendly and did a great job! Their pricing was reasonable. I highly recommend them.”</p><footer><span class="av" aria-hidden="true">J</span><span><b>Jocelyn Rineer</b><br><small>Google review</small></span></footer></blockquote>
-      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“Gary did a great job installing our smart lock and explaining its different features. He was very professional and answered all of my questions. He also installed my Blink camera free of charge”</p><footer><span class="av" aria-hidden="true">K</span><span><b>Kelly Villarin</b><br><small>Google review</small></span></footer></blockquote>
-      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“The locksmith was very efficient, quick and very knowledgeable. Saved a lot of time and money versus getting 2019 Infiniti’s replacement key fob programmed at the dealership.”</p><footer><span class="av" aria-hidden="true">S</span><span><b>Sw an</b><br><small>Google review</small></span></footer></blockquote>
-      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“The tech was very courteous and helpful. He did a very good job programming key fobs for my car in reasonable amount of time.”</p><footer><span class="av" aria-hidden="true">V</span><span><b>Viviana Kesel</b><br><small>Google review</small></span></footer></blockquote>
-      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“Yarin was very responsive, communicated well, and helped me into my apartment quickly”</p><footer><span class="av" aria-hidden="true">B</span><span><b>Brittney Haas</b><br><small>Google review</small></span></footer></blockquote>
-      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“I needed to switch out a deadbolt. It was requested that they come the same day which they did. I am happy with their service.”</p><footer><span class="av" aria-hidden="true">R</span><span><b>Rabecca K</b><br><small>Google review</small></span></footer></blockquote>
-    </div>
-    <p class="rev-cta"><a class="more" href="https://search.google.com/local/writereview?placeid=ChIJKWx47JMSdiYRA5HabqZ5xjc" target="_blank" rel="noopener">Leave us a review on Google</a></p>
-  </div>
-</section>
-
-<section class="seam" aria-labelledby="h-why">
-  <div class="wrap">
-    <h2 id="h-why">Why Garner calls us</h2>
-    <ul class="why">
-      <li><b>Serving Garner since 2024</b><span>Locks, keys and nothing else, for more than a decade.</span></li>
-      <li><b>Fast arrival</b><span>Mobile technicians positioned around Garner, so most lockouts are opened within the hour.</span></li>
-      <li><b>Phones answered 24/7</b><span>A real dispatcher, any hour, every day of the year.</span></li>
-      <li><b>Free estimate first</b><span>You get the full price before we touch the lock. No surprises on the invoice.</span></li>
-      <li><b>Non-destructive entry</b><span>Lockouts are picked or bypassed, not drilled, whenever the lock allows it.</span></li>
-      <li><b>Keys made on site</b><span>Key cutting machine and programming tools on every van — including transponder and push-to-start fobs.</span></li>
-      <li><b>Background-checked</b><span>Every technician shows ID on arrival.</span></li>
-      <li><b>All brands</b><span><a href="https://www.schlage.com/" target="_blank" rel="noopener">Schlage</a>, <a href="https://www.kwikset.com/" target="_blank" rel="noopener">Kwikset</a>, <a href="https://www.yalehome.com/" target="_blank" rel="noopener">Yale</a>, <a href="https://august.com/" target="_blank" rel="noopener">August</a>, <a href="https://www.baldwinhardware.com/" target="_blank" rel="noopener">Baldwin</a>, <a href="https://u-tec.com/" target="_blank" rel="noopener">Ultraloq</a>, <a href="https://level.co/" target="_blank" rel="noopener">Level</a>, <a href="https://www.medeco.com/" target="_blank" rel="noopener">Medeco</a>, <a href="https://www.mul-t-lock.com/" target="_blank" rel="noopener">Mul-T-Lock</a> and every car make.</span></li>
-      <li><b>Warranty on work and hardware</b><span>Locks we install and keys we cut are guaranteed.</span></li>
-    </ul>
-    <h3>Car makes we cut and program keys for</h3>
-    <ul class="brands"><li>Toyota</li><li>Honda</li><li>Ford</li><li>Chevrolet</li><li>Nissan</li><li>Hyundai</li><li>Kia</li><li>Subaru</li><li>BMW</li><li>Mercedes-Benz</li><li>Volkswagen</li><li>Audi</li><li>Lexus</li><li>Mazda</li><li>Jeep</li><li>Dodge</li><li>RAM</li><li>GMC</li><li>Tesla</li><li>Acura</li></ul>
-  </div>
-</section>
-
-<section class="seam" aria-labelledby="h-how">
-  <div class="wrap two">
-    <div>
-      <h2 id="h-how">How a service call works</h2>
-      <ol class="steps">
-        <li><div><strong>You call, we dispatch.</strong>Tell the dispatcher where you are and what happened. You get an arrival time right away — usually within the hour in Garner.</div></li>
-        <li><div><strong>Free estimate on arrival.</strong>The technician checks the lock or the car, shows ID, and quotes the whole job before starting.</div></li>
-        <li><div><strong>Done on the spot.</strong>Doors opened, keys cut and programmed, locks rekeyed or replaced — finished in one visit, with a warranty.</div></li>
-      </ol>
-    </div>
-    <div>
-      <h2>Garner Locksmith serves all of Garner, NC</h2>
-      <p>Garner Locksmith is a mobile locksmith based in Garner, NC 27529. We cover all of Garner: downtown, White Oak, the Timber Drive and Lake Benson side of town, the US-70 corridor and the Cleveland community.</p>
-      <p>Garner is home, and it is where our locksmiths spend the day. If your address is in Garner, NC 27529, in Wake County or just over the Johnston County line, you are inside our regular service area and there is no extra trip charge.</p>
-      <p>Open 24 hours a day, including nights, weekends and holidays, because lockouts never pick a convenient time. <a href="/service-areas/">See where in Garner we work.</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="seam" aria-labelledby="h-brands">
-  <div class="wrap">
-    <h2 id="h-brands">Lock brands we install and service in Garner</h2>
-    <p>Garner Locksmith carries, installs, rekeys and repairs hardware from the manufacturers below. Links go to the official manufacturer sites so you can compare models before you call.</p>
-    <div class="brandgrid">
-      <div class="brandcol"><h3>Residential &amp; smart locks</h3><ul><li><a href="https://www.schlage.com/" target="_blank" rel="noopener">Schlage</a><span>Encode smart deadbolts, Grade 1 deadbolts and levers</span></li><li><a href="https://www.kwikset.com/" target="_blank" rel="noopener">Kwikset</a><span>SmartKey rekeyable locks, Halo and Kevo smart locks</span></li><li><a href="https://www.yalehome.com/" target="_blank" rel="noopener">Yale</a><span>Assure Lock smart deadbolts and keypad locks</span></li><li><a href="https://august.com/" target="_blank" rel="noopener">August</a><span>Retrofit Wi-Fi smart locks that keep your existing keys</span></li><li><a href="https://www.baldwinhardware.com/" target="_blank" rel="noopener">Baldwin</a><span>Premium handlesets and deadbolts</span></li><li><a href="https://u-tec.com/" target="_blank" rel="noopener">Ultraloq</a><span>Fingerprint and keypad smart locks</span></li><li><a href="https://level.co/" target="_blank" rel="noopener">Level</a><span>Invisible smart locks with Apple Home Key</span></li></ul></div>
-      <div class="brandcol"><h3>High-security</h3><ul><li><a href="https://www.medeco.com/" target="_blank" rel="noopener">Medeco</a><span>Restricted keyways, pick- and drill-resistant cylinders</span></li><li><a href="https://www.mul-t-lock.com/" target="_blank" rel="noopener">Mul-T-Lock</a><span>Patented high-security cylinders and padlocks</span></li><li><a href="https://www.abloy.com/" target="_blank" rel="noopener">ABLOY</a><span>Disc-detainer high-security locks</span></li></ul></div>
-      <div class="brandcol"><h3>Commercial</h3><ul><li><a href="https://www.allegion.com/us/en/brands/von-duprin.html" target="_blank" rel="noopener">Von Duprin</a><span>Panic bars and exit devices</span></li><li><a href="https://www.detex.com/" target="_blank" rel="noopener">Detex</a><span>Alarmed exit devices and panic hardware</span></li><li><a href="https://www.adamsrite.com/" target="_blank" rel="noopener">Adams Rite</a><span>Storefront and aluminum door locks</span></li><li><a href="https://www.sargentlock.com/" target="_blank" rel="noopener">Sargent</a><span>Commercial mortise locks and exit devices</span></li><li><a href="https://www.corbinrusswin.com/" target="_blank" rel="noopener">Corbin Russwin</a><span>Commercial locks and master key systems</span></li><li><a href="https://www.allegion.com/us/en/brands/lcn.html" target="_blank" rel="noopener">LCN</a><span>Door closers</span></li></ul></div>
-      <div class="brandcol"><h3>Padlocks &amp; safes</h3><ul><li><a href="https://www.masterlock.com/" target="_blank" rel="noopener">Master Lock</a><span>Padlocks, lockboxes and safes</span></li><li><a href="https://www.sentrysafe.com/" target="_blank" rel="noopener">SentrySafe</a><span>Home and office safes</span></li></ul></div>
-    </div>
-  </div>
-</section>
-
-<section class="seam" aria-labelledby="h-gallery">
-  <div class="wrap">
-    <h2 id="h-gallery">Recent work around Garner</h2>
-    <div class="gallery marquee">
-      <div class="track">
-      <figure><img src="/img/gallery/p03.webp?v=1a0ba18b" alt="Remote-head car key made by Garner Locksmith for a Garner driver" loading="lazy" width="576" height="1024"><figcaption>Remote-head car key made by Garner Locksmith for a Garner driver</figcaption></figure>
-      <figure><img src="/img/gallery/p36.webp?v=34de470d" alt="New smart key fob supplied and programmed by Garner Locksmith" loading="lazy" width="768" height="1024"><figcaption>New smart key fob supplied and programmed by Garner Locksmith</figcaption></figure>
-      <figure><img src="/img/gallery/p23.webp?v=9f69a5e6" alt="Storefront door lock serviced by a locksmith in Garner" loading="lazy" width="900" height="1200"><figcaption>Storefront door lock serviced by a locksmith in Garner</figcaption></figure>
-      <figure><img src="/img/gallery/p45.webp?v=084737fc" alt="Proximity key fob programmed on site by Garner Locksmith" loading="lazy" width="576" height="1024"><figcaption>Proximity key fob programmed on site by Garner Locksmith</figcaption></figure>
-      <figure><img src="/img/gallery/p28.webp?v=3a3587a4" alt="Commercial door latch repaired during a lockout call in Garner" loading="lazy" width="900" height="1200"><figcaption>Commercial door latch repaired during a lockout call in Garner</figcaption></figure>
-      <figure><img src="/img/gallery/p48.webp?v=99e75eb3" alt="Two flip keys cut and programmed as spares in Garner" loading="lazy" width="576" height="1024"><figcaption>Two flip keys cut and programmed as spares in Garner</figcaption></figure>
-      <figure><img src="/img/gallery/p38.webp?v=d09bbe06" alt="Glass door lock hardware repaired by Garner Locksmith" loading="lazy" width="900" height="1200"><figcaption>Glass door lock hardware repaired by Garner Locksmith</figcaption></figure>
-      <figure><img src="/img/gallery/p25.webp?v=5bab9f34" alt="Ignition assembly removed for repair by a Garner locksmith" loading="lazy" width="768" height="1024"><figcaption>Ignition assembly removed for repair by a Garner locksmith</figcaption></figure>
-      <figure><img src="/img/gallery/p04.webp?v=f120f37f" alt="Key cutting machine on the Garner Locksmith van" loading="lazy" width="675" height="1200"><figcaption>Key cutting machine on the Garner Locksmith van</figcaption></figure>
-      <figure><img src="/img/gallery/p34.webp?v=0fceed88" alt="Smart key tested in the car after programming in Garner" loading="lazy" width="675" height="1200"><figcaption>Smart key tested in the car after programming in Garner</figcaption></figure>
-      <figure><img src="/img/gallery/p13.webp?v=9b50b2d1" alt="Glass office door hardware installed in Garner" loading="lazy" width="900" height="1200"><figcaption>Glass office door hardware installed in Garner</figcaption></figure>
-      <figure><img src="/img/gallery/p31.webp?v=186feb0a" alt="Transponder key cut and programmed by Garner Locksmith" loading="lazy" width="576" height="1024"><figcaption>Transponder key cut and programmed by Garner Locksmith</figcaption></figure>
-      <figure><img src="/img/gallery/p35.webp?v=1bad96f1" alt="Smart key fob replaced by a locksmith in Garner" loading="lazy" width="1179" height="812"><figcaption>Smart key fob replaced by a locksmith in Garner</figcaption></figure>
-      <figure><img src="/img/gallery/p00.webp?v=66fc003c" alt="Car key and remote programmed for a Honda in Garner" loading="lazy" width="1200" height="674"><figcaption>Car key and remote programmed for a Honda in Garner</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p03.webp?v=1a0ba18b" data-dup alt="Remote-head car key made by Garner Locksmith for a Garner driver" loading="lazy" width="576" height="1024"><figcaption>Remote-head car key made by Garner Locksmith for a Garner driver</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p36.webp?v=34de470d" data-dup alt="New smart key fob supplied and programmed by Garner Locksmith" loading="lazy" width="768" height="1024"><figcaption>New smart key fob supplied and programmed by Garner Locksmith</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p23.webp?v=9f69a5e6" data-dup alt="Storefront door lock serviced by a locksmith in Garner" loading="lazy" width="900" height="1200"><figcaption>Storefront door lock serviced by a locksmith in Garner</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p45.webp?v=084737fc" data-dup alt="Proximity key fob programmed on site by Garner Locksmith" loading="lazy" width="576" height="1024"><figcaption>Proximity key fob programmed on site by Garner Locksmith</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p28.webp?v=3a3587a4" data-dup alt="Commercial door latch repaired during a lockout call in Garner" loading="lazy" width="900" height="1200"><figcaption>Commercial door latch repaired during a lockout call in Garner</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p48.webp?v=99e75eb3" data-dup alt="Two flip keys cut and programmed as spares in Garner" loading="lazy" width="576" height="1024"><figcaption>Two flip keys cut and programmed as spares in Garner</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p38.webp?v=d09bbe06" data-dup alt="Glass door lock hardware repaired by Garner Locksmith" loading="lazy" width="900" height="1200"><figcaption>Glass door lock hardware repaired by Garner Locksmith</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p25.webp?v=5bab9f34" data-dup alt="Ignition assembly removed for repair by a Garner locksmith" loading="lazy" width="768" height="1024"><figcaption>Ignition assembly removed for repair by a Garner locksmith</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p04.webp?v=f120f37f" data-dup alt="Key cutting machine on the Garner Locksmith van" loading="lazy" width="675" height="1200"><figcaption>Key cutting machine on the Garner Locksmith van</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p34.webp?v=0fceed88" data-dup alt="Smart key tested in the car after programming in Garner" loading="lazy" width="675" height="1200"><figcaption>Smart key tested in the car after programming in Garner</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p13.webp?v=9b50b2d1" data-dup alt="Glass office door hardware installed in Garner" loading="lazy" width="900" height="1200"><figcaption>Glass office door hardware installed in Garner</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p31.webp?v=186feb0a" data-dup alt="Transponder key cut and programmed by Garner Locksmith" loading="lazy" width="576" height="1024"><figcaption>Transponder key cut and programmed by Garner Locksmith</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p35.webp?v=1bad96f1" data-dup alt="Smart key fob replaced by a locksmith in Garner" loading="lazy" width="1179" height="812"><figcaption>Smart key fob replaced by a locksmith in Garner</figcaption></figure>
-      <figure aria-hidden="true"><img src="/img/gallery/p00.webp?v=66fc003c" data-dup alt="Car key and remote programmed for a Honda in Garner" loading="lazy" width="1200" height="674"><figcaption>Car key and remote programmed for a Honda in Garner</figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band" aria-labelledby="h-emerg">
-  <div class="wrap">
-    <h2 id="h-emerg">Locked out right now?</h2>
-    <p>Stay where it's safe and well lit, keep your phone handy, and call. The dispatcher sends the nearest technician in Garner and gives you an arrival time before you hang up. Never try to force a lock or a car window — it almost always costs more to fix than the lockout.</p>
-    <a class="bignum" href="tel:+19198670279"><span>Emergency line, 24 hours</span>919-867-0279</a>
-  </div>
-</section>
-
-<section aria-labelledby="h-offers">
-  <div class="wrap">
-    <h2 id="h-offers">Offers for Garner customers</h2>
-    <div class="offer">
-      <div><b>Free estimate</b><span>A firm price before any work starts, on every call.</span></div>
-      <div><b>Free security check</b><span>With every residential visit: we look at every exterior door and tell you what's weak.</span></div>
-      <div><b>Beat the dealer</b><span>Car keys and fobs programmed on site, typically well under dealership pricing, with no tow.</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="seam" aria-labelledby="h-blog">
-  <div class="wrap">
-    <h2 id="h-blog">From the blog</h2>
-    <div class="grid">
-      <div class="svc"><h3><a href="/blog/how-to-spot-a-locksmith-scam/">How to spot a locksmith scam in Garner before you get burned</a></h3><p>The &quot;$19 locksmith&quot; trap, lookalike business names, unmarked cars and drilling. How to tell a real Garner locksmith from a call center.</p><a class="more" href="/blog/how-to-spot-a-locksmith-scam/">Read the article</a></div>
-      <div class="svc"><h3><a href="/blog/lost-car-keys-what-to-do/">Lost your car keys in Garner? Here&#x27;s what to do</a></h3><p>Lost the only key to your car? What a locksmith can do on the spot, what the dealer will charge, and how to avoid a tow.</p><a class="more" href="/blog/lost-car-keys-what-to-do/">Read the article</a></div>
-      <div class="svc"><h3><a href="/blog/rekey-vs-replace-locks/">Rekey or replace? What to do with your locks after you move</a></h3><p>Why rekeying is the cheapest security upgrade for a new home, when replacing is the better call, and what to ask the locksmith.</p><a class="more" href="/blog/rekey-vs-replace-locks/">Read the article</a></div>
-    </div>
-    <p style="margin-top:1.5rem"><a class="more" href="/blog/" style="font-weight:600;text-decoration:none;border-bottom:2px solid var(--signal)">All articles</a></p>
-  </div>
-</section>
-
-<section class="seam" id="faq" aria-labelledby="h-faq">
-  <div class="wrap two">
-    <div>
-      <h2 id="h-faq">Common questions</h2>
-      <details><summary>How fast can you get to me in Garner?</summary><p>Most lockouts in Garner are reached within 20 to 40 minutes. The dispatcher gives you an arrival time when you call.</p></details>
-      <details><summary>How much does a locksmith cost in Garner?</summary><p>It depends on the job. A standard car or house lockout is the most affordable call; car key replacement depends on the key type. Either way you get a firm price before any work starts, and there is no charge for the estimate.</p></details>
-      <details><summary>Can you make a car key if I lost the only one?</summary><p>Yes. We cut and program keys from scratch for almost every make and model, including transponder keys and push-to-start fobs, right where the car is. No tow to the dealer.</p></details>
-      <details><summary>Will you damage my lock or my car?</summary><p>No. Lockouts are opened with picks, bypass tools and air wedges, not drills or slim jims, whenever the lock allows it. If drilling is the only option we tell you first.</p></details>
-      <details><summary>Should I rekey or replace my locks after moving?</summary><p>If the hardware is in good shape, rekeying is cheaper and just as secure: the old keys stop working and you get one new key for every door. We replace only locks that are worn, damaged or low-grade.</p></details>
-      <details><summary>Do you cover all of Garner?</summary><p>Yes. We cover all of Garner, NC 27529. Wherever you are in town, a technician is usually 20 to 40 minutes away.</p></details>
-      <details><summary>Are your technicians background-checked?</summary><p>Yes. Garner Locksmith has been in business since 2024, and every technician is background-checked and carries ID.</p></details>
-      <p><a class="more" href="/locksmith-faq/">All 15 locksmith questions &amp; answers</a></p>
-    </div>
-    <div id="contact">
-      <h2>Request a call back</h2>
+    <div class="kform" id="contact">
+      <h2>Get a call back in minutes</h2>
+      <p>Leave your number and what you need. A Garner locksmith calls you right back.</p>
 <form class="lead quick" action="https://api.web3forms.com/submit" method="POST">
   <input type="hidden" name="access_key" value="70f90148-447c-40e6-9aa0-c8a87b435cf6">
   <input type="hidden" name="from_name" value="Garner Locksmith website">
@@ -1012,6 +874,171 @@ footer h3{font-size:1.05rem}
 </form>
 
     </div>
+  </div>
+  <div class="wrap kstrip">
+    <picture><source media="(max-width:700px)" srcset="/img/gallery/g0-640.webp?v=ca5eecda"><img src="/img/gallery/g0.webp?v=9683409d" alt="Garner Locksmith technician holding a new car key made on site in Garner, NC" width="900" height="1600" fetchpriority="high" decoding="async"></picture>
+    <img src="/img/gallery/p23.webp?v=9f69a5e6" alt="Storefront door lock serviced by a locksmith in Garner" loading="lazy" decoding="async" width="900" height="1200">
+    <img src="/img/gallery/p45.webp?v=084737fc" alt="Car key fob programmed by Garner Locksmith in Garner" loading="lazy" decoding="async" width="576" height="1024">
+    <img src="/img/gallery/p38.webp?v=d09bbe06" alt="Glass door lock repaired by Garner Locksmith" loading="lazy" decoding="async" width="900" height="1200">
+    <img src="/img/gallery/p25.webp?v=5bab9f34" alt="Ignition repaired by a Garner locksmith" loading="lazy" decoding="async" width="768" height="1024">
+  </div>
+</section>
+
+<section id="services" class="ksec" aria-labelledby="h-services">
+  <div class="wrap">
+    <h2 id="h-services">Locksmith services in Garner</h2>
+    <p class="ksub">Whatever is locked, jammed, lost or broken, one call to Garner Locksmith covers it. Pick a service to see what is included.</p>
+    <div class="kdirs">
+      <article class="kdir">
+        <a class="kdir-img" href="/automotive-locksmith/"><img src="/img/products/car-key-replacement.webp?v=6ab0977f" alt="Automotive locksmith in Garner, NC" loading="lazy" decoding="async" width="500" height="500"></a>
+        <h3><a href="/automotive-locksmith/">Automotive locksmith Garner</a></h3>
+        <p>Car lockouts, trunk lockouts, lost keys, transponder keys, smart keys, laser-cut keys and ignitions, done where the car is parked.</p>
+        <ul><li><a href="/car-lockout-service/">Car lockout service</a></li><li><a href="/car-key-replacement/">Car key replacement</a></li><li><a href="/key-fob-programming/">Key fob &amp; transponder programming</a></li><li><a href="/spare-car-key/">Spare car key duplication</a></li><li><a href="/ignition-repair/">Ignition repair &amp; replacement</a></li><li><a href="/car-door-lock-repair/">Car door &amp; trunk lock repair</a></li><li><a href="/broken-key-extraction/">Broken key extraction</a></li></ul>
+      </article>
+      <article class="kdir">
+        <a class="kdir-img" href="/residential-locksmith/"><img src="/img/products/deadbolt-lock-installation.webp?v=a5a175eb" alt="Residential locksmith in Garner, NC" loading="lazy" decoding="async" width="500" height="500"></a>
+        <h3><a href="/residential-locksmith/">Residential locksmith Garner</a></h3>
+        <p>House and apartment lockouts, lock changes, keypad locks, mailbox and garage door locks, home safes and house keys.</p>
+        <ul><li><a href="/house-lockout-service/">House lockout service</a></li><li><a href="/lock-rekeying/">Lock rekeying</a></li><li><a href="/deadbolt-lock-installation/">Deadbolt &amp; lock installation</a></li><li><a href="/smart-lock-installation/">Smart lock installation</a></li><li><a href="/lock-repair/">Lock repair</a></li><li><a href="/key-duplication/">Key duplication &amp; cutting</a></li><li><a href="/high-security-locks/">High-security locks</a></li></ul>
+      </article>
+      <article class="kdir">
+        <a class="kdir-img" href="/commercial-locksmith/"><img src="/img/products/commercial-locksmith-access-control.webp?v=6ab4a0c9" alt="Commercial locksmith in Garner, NC" loading="lazy" decoding="async" width="500" height="500"></a>
+        <h3><a href="/commercial-locksmith/">Commercial locksmith Garner</a></h3>
+        <p>Business lockouts, storefront door locks, door closers, file cabinet and desk locks, office safes and building key copying.</p>
+        <ul><li><a href="/commercial-lockout-service/">Commercial lockout service</a></li><li><a href="/commercial-locksmith-access-control/">Access control</a></li><li><a href="/master-key-systems/">Master key systems</a></li><li><a href="/panic-bar-installation/">Panic bar &amp; exit devices</a></li><li><a href="/safe-opening/">Safe opening</a></li><li><a href="/emergency-lockout-service/">24/7 emergency lockout</a></li></ul>
+      </article>
+    </div>
+    <p class="kall"><a class="kbtn" href="/services/">See all 20 locksmith services</a></p>
+  </div>
+</section>
+
+<section class="ksec ktint" aria-labelledby="h-mobile">
+  <div class="wrap ksplit">
+    <figure class="kphoto"><img src="/img/gallery/p04.webp?v=f120f37f" alt="Key cutting machine on the Garner Locksmith van in Garner" loading="lazy" decoding="async" width="900" height="1600"></figure>
+    <div>
+      <h2 id="h-mobile">Garner Locksmith: the mobile locksmith shop that comes to you</h2>
+      <p>Garner Locksmith is a mobile locksmith company serving Garner, NC 27529. There is no counter to stand at and no car to tow. A Garner locksmith drives to your home, your business or wherever your vehicle is parked, with the key machines, programmers, locks and door hardware already on the van.</p>
+      <p>That is why most locksmith jobs in Garner are finished in one visit. Locked out? Our locksmith opens the door. Lost the only car key? We cut and program a new one on the spot. Just moved in? Garner Locksmith rekeys every lock to one new key before you unpack. You hear the quote before any work starts.</p>
+      <ul class="kticks">
+        <li><b>Lockouts</b> for houses, apartments, offices, storefronts, cars and trunks, opened without damage.</li>
+        <li><b>Lock work</b>: locks repaired, rekeyed, changed or upgraded, from one deadbolt to a whole building.</li>
+        <li><b>Car keys</b> and key fobs cut and programmed, ignitions repaired, broken keys removed.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="ksec" aria-labelledby="h-local">
+  <div class="wrap ksplit krev">
+    <div>
+      <h2 id="h-local">A local locksmith for every part of Garner</h2>
+      <p>Garner Locksmith works only around Garner, so the locksmith who answers your call already knows the roads. We are on US-70 and Timber Drive every day, around White Oak Crossing and downtown Garner on Main Street, along Aversboro Road, Vandora Springs Road and Benson Road (NC-50), out by Lake Benson Park and down toward the Cleveland community off NC-42.</p>
+      <p>Whether you are locked out of a car in a shopping center lot off I-40, need the locks rekeyed on a house you just closed on, or manage a storefront that needs a new lock before opening time, a Garner locksmith can usually be with you within the hour. Open 24 hours a day, nights, weekends and holidays included.</p>
+      <p><a class="kbtn" href="/service-areas/">Where in Garner we work</a></p>
+    </div>
+    <div class="map kmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103695.83437239357!2d-78.60558954999999!3d35.689439050000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x26761293ec786c29%3A0x37c679a66eda9103!2sGarner%20Locksmith!5e0!3m2!1sen!2sus!4v1788363094222!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Garner Locksmith on Google Maps"></iframe></div>
+  </div>
+</section>
+
+<section class="ksec ktint" aria-labelledby="h-how">
+  <div class="wrap">
+    <h2 id="h-how">How a service call works</h2>
+    <ol class="ksteps">
+      <li><strong>You call, we dispatch</strong><span>Tell us where you are in Garner and what happened. You get an arrival time right away, usually within the hour.</span></li>
+      <li><strong>Free estimate on arrival</strong><span>The locksmith checks the lock or the car, shows ID, and quotes the whole job before starting.</span></li>
+      <li><strong>Done on the spot</strong><span>Doors opened, keys cut and programmed, locks rekeyed or replaced, finished in one visit.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="seam reviews" aria-labelledby="h-reviews">
+  <div class="wrap">
+    <div class="rev-head">
+      <h2 id="h-reviews">What Garner customers say</h2>
+      <p class="rating"><span class="stars">★★★★★</span> <b>4.6</b> rating · <a href="https://maps.google.com/?cid=4019033473206096131" target="_blank" rel="noopener">21 Google reviews</a></p>
+    </div>
+    <div class="grid revs">
+      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“We lost the keys to our front door. I called and they changed out the locks &amp; hardware and all of this was done within 45 minutes. Gary was the locksmith and he was friendly and did a great job! Their pricing was reasonable. I highly recommend them.”</p><footer><span class="av" aria-hidden="true">J</span><span><b>Jocelyn Rineer</b><br><small>Google review</small></span></footer></blockquote>
+      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“Gary did a great job installing our smart lock and explaining its different features. He was very professional and answered all of my questions. He also installed my Blink camera free of charge”</p><footer><span class="av" aria-hidden="true">K</span><span><b>Kelly Villarin</b><br><small>Google review</small></span></footer></blockquote>
+      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“The locksmith was very efficient, quick and very knowledgeable. Saved a lot of time and money versus getting 2019 Infiniti’s replacement key fob programmed at the dealership.”</p><footer><span class="av" aria-hidden="true">S</span><span><b>Sw an</b><br><small>Google review</small></span></footer></blockquote>
+      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“The tech was very courteous and helpful. He did a very good job programming key fobs for my car in reasonable amount of time.”</p><footer><span class="av" aria-hidden="true">V</span><span><b>Viviana Kesel</b><br><small>Google review</small></span></footer></blockquote>
+      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“Yarin was very responsive, communicated well, and helped me into my apartment quickly”</p><footer><span class="av" aria-hidden="true">B</span><span><b>Brittney Haas</b><br><small>Google review</small></span></footer></blockquote>
+      <blockquote class="rev"><p><span class="stars" role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span></p><p class="rev-text">“I needed to switch out a deadbolt. It was requested that they come the same day which they did. I am happy with their service.”</p><footer><span class="av" aria-hidden="true">R</span><span><b>Rabecca K</b><br><small>Google review</small></span></footer></blockquote>
+    </div>
+    <p class="rev-cta"><a class="more" href="https://search.google.com/local/writereview?placeid=ChIJKWx47JMSdiYRA5HabqZ5xjc" target="_blank" rel="noopener">Leave us a review on Google</a></p>
+  </div>
+</section>
+
+<section class="seam" aria-labelledby="h-brands">
+  <div class="wrap">
+    <h2 id="h-brands">Lock brands we install and service in Garner</h2>
+    <p>Garner Locksmith carries, installs, rekeys and repairs hardware from the manufacturers below. Links go to the official manufacturer sites so you can compare models before you call.</p>
+    <div class="brandgrid">
+      <div class="brandcol"><h3>Residential &amp; smart locks</h3><ul><li><a href="https://www.schlage.com/" target="_blank" rel="noopener">Schlage</a><span>Encode smart deadbolts, Grade 1 deadbolts and levers</span></li><li><a href="https://www.kwikset.com/" target="_blank" rel="noopener">Kwikset</a><span>SmartKey rekeyable locks, Halo and Kevo smart locks</span></li><li><a href="https://www.yalehome.com/" target="_blank" rel="noopener">Yale</a><span>Assure Lock smart deadbolts and keypad locks</span></li><li><a href="https://august.com/" target="_blank" rel="noopener">August</a><span>Retrofit Wi-Fi smart locks that keep your existing keys</span></li><li><a href="https://www.baldwinhardware.com/" target="_blank" rel="noopener">Baldwin</a><span>Premium handlesets and deadbolts</span></li><li><a href="https://u-tec.com/" target="_blank" rel="noopener">Ultraloq</a><span>Fingerprint and keypad smart locks</span></li><li><a href="https://level.co/" target="_blank" rel="noopener">Level</a><span>Invisible smart locks with Apple Home Key</span></li></ul></div>
+      <div class="brandcol"><h3>High-security</h3><ul><li><a href="https://www.medeco.com/" target="_blank" rel="noopener">Medeco</a><span>Restricted keyways, pick- and drill-resistant cylinders</span></li><li><a href="https://www.mul-t-lock.com/" target="_blank" rel="noopener">Mul-T-Lock</a><span>Patented high-security cylinders and padlocks</span></li><li><a href="https://www.abloy.com/" target="_blank" rel="noopener">ABLOY</a><span>Disc-detainer high-security locks</span></li></ul></div>
+      <div class="brandcol"><h3>Commercial</h3><ul><li><a href="https://www.allegion.com/us/en/brands/von-duprin.html" target="_blank" rel="noopener">Von Duprin</a><span>Panic bars and exit devices</span></li><li><a href="https://www.detex.com/" target="_blank" rel="noopener">Detex</a><span>Alarmed exit devices and panic hardware</span></li><li><a href="https://www.adamsrite.com/" target="_blank" rel="noopener">Adams Rite</a><span>Storefront and aluminum door locks</span></li><li><a href="https://www.sargentlock.com/" target="_blank" rel="noopener">Sargent</a><span>Commercial mortise locks and exit devices</span></li><li><a href="https://www.corbinrusswin.com/" target="_blank" rel="noopener">Corbin Russwin</a><span>Commercial locks and master key systems</span></li><li><a href="https://www.allegion.com/us/en/brands/lcn.html" target="_blank" rel="noopener">LCN</a><span>Door closers</span></li></ul></div>
+      <div class="brandcol"><h3>Padlocks &amp; safes</h3><ul><li><a href="https://www.masterlock.com/" target="_blank" rel="noopener">Master Lock</a><span>Padlocks, lockboxes and safes</span></li><li><a href="https://www.sentrysafe.com/" target="_blank" rel="noopener">SentrySafe</a><span>Home and office safes</span></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="seam" aria-labelledby="h-gallery">
+  <div class="wrap">
+    <h2 id="h-gallery">Recent work around Garner</h2>
+    <div class="gallery">
+      <figure><img src="/img/gallery/p03.webp?v=1a0ba18b" alt="Remote-head car key made by Garner Locksmith for a Garner driver" loading="lazy" width="576" height="1024"><figcaption>Remote-head car key made by Garner Locksmith for a Garner driver</figcaption></figure>
+      <figure><img src="/img/gallery/p36.webp?v=34de470d" alt="New smart key fob supplied and programmed by Garner Locksmith" loading="lazy" width="768" height="1024"><figcaption>New smart key fob supplied and programmed by Garner Locksmith</figcaption></figure>
+      <figure><img src="/img/gallery/p23.webp?v=9f69a5e6" alt="Storefront door lock serviced by a locksmith in Garner" loading="lazy" width="900" height="1200"><figcaption>Storefront door lock serviced by a locksmith in Garner</figcaption></figure>
+      <figure><img src="/img/gallery/p45.webp?v=084737fc" alt="Proximity key fob programmed on site by Garner Locksmith" loading="lazy" width="576" height="1024"><figcaption>Proximity key fob programmed on site by Garner Locksmith</figcaption></figure>
+      <figure><img src="/img/gallery/p28.webp?v=3a3587a4" alt="Commercial door latch repaired during a lockout call in Garner" loading="lazy" width="900" height="1200"><figcaption>Commercial door latch repaired during a lockout call in Garner</figcaption></figure>
+      <figure><img src="/img/gallery/p48.webp?v=99e75eb3" alt="Two flip keys cut and programmed as spares in Garner" loading="lazy" width="576" height="1024"><figcaption>Two flip keys cut and programmed as spares in Garner</figcaption></figure>
+      <figure><img src="/img/gallery/p38.webp?v=d09bbe06" alt="Glass door lock hardware repaired by Garner Locksmith" loading="lazy" width="900" height="1200"><figcaption>Glass door lock hardware repaired by Garner Locksmith</figcaption></figure>
+      <figure><img src="/img/gallery/p25.webp?v=5bab9f34" alt="Ignition assembly removed for repair by a Garner locksmith" loading="lazy" width="768" height="1024"><figcaption>Ignition assembly removed for repair by a Garner locksmith</figcaption></figure>
+      <figure><img src="/img/gallery/p04.webp?v=f120f37f" alt="Key cutting machine on the Garner Locksmith van" loading="lazy" width="675" height="1200"><figcaption>Key cutting machine on the Garner Locksmith van</figcaption></figure>
+      <figure><img src="/img/gallery/p34.webp?v=0fceed88" alt="Smart key tested in the car after programming in Garner" loading="lazy" width="675" height="1200"><figcaption>Smart key tested in the car after programming in Garner</figcaption></figure>
+      <figure><img src="/img/gallery/p13.webp?v=9b50b2d1" alt="Glass office door hardware installed in Garner" loading="lazy" width="900" height="1200"><figcaption>Glass office door hardware installed in Garner</figcaption></figure>
+      <figure><img src="/img/gallery/p31.webp?v=186feb0a" alt="Transponder key cut and programmed by Garner Locksmith" loading="lazy" width="576" height="1024"><figcaption>Transponder key cut and programmed by Garner Locksmith</figcaption></figure>
+      <figure><img src="/img/gallery/p35.webp?v=1bad96f1" alt="Smart key fob replaced by a locksmith in Garner" loading="lazy" width="1179" height="812"><figcaption>Smart key fob replaced by a locksmith in Garner</figcaption></figure>
+      <figure><img src="/img/gallery/p00.webp?v=66fc003c" alt="Car key and remote programmed for a Honda in Garner" loading="lazy" width="1200" height="674"><figcaption>Car key and remote programmed for a Honda in Garner</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="ksec" id="faq" aria-labelledby="h-faq">
+  <div class="wrap kfaq">
+    <div>
+      <h2 id="h-faq">Common questions</h2>
+      <p class="ksub">Short answers to what Garner customers ask us most.</p>
+      <p><a class="kbtn" href="/locksmith-faq/">All locksmith questions &amp; answers</a></p>
+    </div>
+    <div>
+<details><summary>How fast can you get to me in Garner?</summary><p>Most lockouts in Garner are reached within 20 to 40 minutes. The dispatcher gives you an arrival time when you call.</p></details>
+      <details><summary>How much does a locksmith cost in Garner?</summary><p>It depends on the job. A standard car or house lockout is the most affordable call; car key replacement depends on the key type. Either way you get a firm price before any work starts, and there is no charge for the estimate.</p></details>
+      <details><summary>Can you make a car key if I lost the only one?</summary><p>Yes. We cut and program keys from scratch for almost every make and model, including transponder keys and push-to-start fobs, right where the car is. No tow to the dealer.</p></details>
+      <details><summary>Will you damage my lock or my car?</summary><p>No. Lockouts are opened with picks, bypass tools and air wedges, not drills or slim jims, whenever the lock allows it. If drilling is the only option we tell you first.</p></details>
+      <details><summary>Should I rekey or replace my locks after moving?</summary><p>If the hardware is in good shape, rekeying is cheaper and just as secure: the old keys stop working and you get one new key for every door. We replace only locks that are worn, damaged or low-grade.</p></details>
+      <details><summary>Do you cover all of Garner?</summary><p>Yes. We cover all of Garner, NC 27529. Wherever you are in town, a technician is usually 20 to 40 minutes away.</p></details>
+      <details><summary>Are your technicians background-checked?</summary><p>Yes. Garner Locksmith has been in business since 2024, and every technician is background-checked and carries ID.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="ksec ktint" aria-labelledby="h-blog">
+  <div class="wrap">
+    <h2 id="h-blog">Locksmith advice for Garner</h2>
+    <div class="grid">
+      <div class="svc"><h3><a href="/blog/how-to-spot-a-locksmith-scam/">How to spot a locksmith scam in Garner before you get burned</a></h3><p>The &quot;$19 locksmith&quot; trap, lookalike business names, unmarked cars and drilling. How to tell a real Garner locksmith from a call center.</p><a class="more" href="/blog/how-to-spot-a-locksmith-scam/">Read the article</a></div>
+      <div class="svc"><h3><a href="/blog/lost-car-keys-what-to-do/">Lost your car keys in Garner? Here&#x27;s what to do</a></h3><p>Lost the only key to your car? What a locksmith can do on the spot, what the dealer will charge, and how to avoid a tow.</p><a class="more" href="/blog/lost-car-keys-what-to-do/">Read the article</a></div>
+      <div class="svc"><h3><a href="/blog/rekey-vs-replace-locks/">Rekey or replace? What to do with your locks after you move</a></h3><p>Why rekeying is the cheapest security upgrade for a new home, when replacing is the better call, and what to ask the locksmith.</p><a class="more" href="/blog/rekey-vs-replace-locks/">Read the article</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band kband" aria-labelledby="h-emerg">
+  <div class="wrap">
+    <h2 id="h-emerg">Locked out right now?</h2>
+    <p>Stay where it is safe and well lit, keep your phone handy, and call. We send the nearest Garner locksmith and give you an arrival time before you hang up.</p>
+    <p class="kcta"><a class="call" href="tel:+19198670279">Call 919-867-0279</a></p>
   </div>
 </section>
 

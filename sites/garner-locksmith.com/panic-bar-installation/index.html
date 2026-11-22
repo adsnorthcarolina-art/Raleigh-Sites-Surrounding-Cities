@@ -590,6 +590,128 @@ footer{padding:3rem 0}
 footer h3{font-size:1.05rem}
 .drawer-head{text-transform:none;letter-spacing:0;font-size:1.25rem}
 .drawer .group{text-transform:none;letter-spacing:0}
+
+/* ======== keystone v2: own page structure (themes/keystone/base.html + pages/home.html) ======== */
+.kbar{background:var(--ink);color:#DDE6E1;font-size:.86rem}
+.kbar .wrap{display:flex;justify-content:space-between;gap:1rem;padding:.45rem 0}
+@media (max-width:640px){.kbar .wrap{justify-content:center}.kbar span+span{display:none}}
+.khead .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem;min-height:0;padding:.9rem 0}
+.khead .brand{flex-direction:column;gap:.3rem;margin:0;text-align:center}
+.khead .brand img.logo{width:78px;height:78px}
+.khead .brand b{font-size:1.05rem}
+.knav{display:flex;align-items:center;gap:.25rem}
+.knav-r{justify-content:flex-end}
+.knav a:not(.call){text-decoration:none;color:var(--ink);font-weight:500;padding:.5rem .7rem;border-radius:8px;white-space:nowrap}
+.knav a:not(.call):hover{background:var(--tint)}
+.knav a[aria-current]:not(.call){color:var(--sage);box-shadow:inset 0 -2px 0 var(--signal);border-radius:0}
+.knav .call{margin-left:.6rem}
+.khead .burger,.khead .kcall-m{display:none}
+@media (max-width:1040px){
+  .khead .wrap{grid-template-columns:auto 1fr auto auto;gap:.6rem;padding:.6rem 0}
+  .knav{display:none}
+  .khead .brand{flex-direction:row;gap:.6rem;text-align:left}
+  .khead .brand img.logo{width:52px;height:52px}
+  .khead .burger{display:inline-flex;grid-column:4}
+  .khead .kcall-m{display:inline-flex;grid-column:3;padding:.7rem .8rem}
+}
+
+/* hero: headline + call-back form side by side, then a strip of real job photos */
+.khero{background:linear-gradient(180deg,var(--tint) 0,var(--tint) calc(100% - 7rem),#fff calc(100% - 7rem));padding:3.25rem 0 0}
+.khero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:3rem;align-items:start}
+.khero h1{font-size:clamp(2.1rem,4.2vw,3.25rem);max-width:18ch;margin:0}
+.khero .lede{font-size:1.12rem;color:var(--steel);margin:1.1rem 0 1.6rem;max-width:52ch}
+.kcta{display:flex;flex-wrap:wrap;gap:.6rem;margin:0;max-width:none}
+.kcta .call{font-size:1.15rem;padding:.9rem 1.5rem}
+.kbtn{display:inline-flex;align-items:center;text-decoration:none;font-weight:600;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:.7rem 1.25rem;background:transparent;transition:background-color .2s ease}
+.kbtn:hover{background:var(--tint)}
+.khero .kbtn:hover{background:#fff}
+.kfacts{list-style:none;margin:1.75rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.45rem 1.5rem;max-width:34rem;font-weight:500}
+.kfacts li{display:flex;gap:.6rem;align-items:baseline}
+.kfacts li::before{content:"";flex:none;width:.45rem;height:.8rem;border:solid var(--sage);border-width:0 3px 3px 0;transform:rotate(45deg) translateY(-2px)}
+.kform{background:#fff;border:1px solid var(--panel);border-radius:20px;padding:1.6rem 1.6rem 1.4rem;box-shadow:0 18px 40px -28px rgba(31,47,42,.55)}
+.kform h2{font-size:1.45rem;margin:0 0 .35rem;max-width:none}
+.kform>p{color:var(--steel);margin:0 0 1rem;font-size:.98rem}
+.kform .lead{max-width:none;gap:.7rem}
+.kstrip{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr 1fr;gap:1rem;margin-top:3rem;align-items:end}
+.kstrip img{width:100%;height:230px;object-fit:cover;border-radius:16px;display:block}
+.kstrip picture img{height:280px}
+.kstrip>img:nth-of-type(2){height:260px}
+@media (max-width:900px){
+  .khero{padding-top:2rem}
+  .khero-grid{grid-template-columns:1fr;gap:2rem}
+  .kstrip{grid-template-columns:1fr 1fr;margin-top:2rem}
+  .kstrip img,.kstrip picture img,.kstrip>img:nth-of-type(2){height:170px}
+  .kstrip>img:nth-of-type(n+2){display:none}
+  .kfacts{grid-template-columns:1fr}
+}
+
+/* sections */
+.ksec{padding:4.5rem 0}
+main>section.ksec:nth-of-type(even){background:#fff}
+main>section.ksec.ktint,main>section.ktint{background:var(--paper)}
+.ksub{color:var(--steel);font-size:1.08rem;max-width:60ch;margin:-.6rem 0 2rem}
+.kall{margin:2.25rem 0 0;max-width:none}
+
+/* service directory: three columns, photo + linked list */
+.kdirs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
+.kdir-img{display:block;border-radius:18px;overflow:hidden}
+.kdir-img img{width:100%;height:210px;object-fit:cover;display:block;transition:transform .4s ease}
+.kdir-img:hover img{transform:scale(1.03)}
+.kdir h3{font-size:1.3rem;margin:1.1rem 0 .4rem}
+.kdir h3 a{text-decoration:none}
+.kdir p{color:var(--steel);font-size:.97rem;margin:0 0 .8rem}
+.kdir ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--panel)}
+.kdir li{border-bottom:1px solid var(--panel)}
+.kdir li a{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem .15rem;text-decoration:none!important;font-weight:500}
+.kdir li a::after{content:"";flex:none;width:.5rem;height:.5rem;border:solid var(--sage);border-width:2px 2px 0 0;transform:rotate(45deg)}
+.kdir li a:hover{color:var(--sage)}
+@media (max-width:900px){.kdirs{grid-template-columns:1fr;gap:2.5rem}.kdir-img img{height:190px}}
+
+/* split blocks */
+.ksplit{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:3.5rem;align-items:center}
+.ksplit.krev{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.kphoto{margin:0}
+.kphoto img{width:100%;height:auto;max-height:520px;object-fit:cover;border-radius:22px;display:block}
+.kticks{list-style:none;margin:1.25rem 0 0;padding:0;display:grid;gap:.6rem}
+.kticks li{position:relative;padding-left:1.6rem}
+.kticks li::before{content:"";position:absolute;left:.25rem;top:.3rem;width:.45rem;height:.8rem;border:solid var(--sage);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.kmap{aspect-ratio:1/1;max-width:none;border-radius:22px;overflow:hidden;border:1px solid var(--panel)}
+@media (max-width:900px){.ksplit,.ksplit.krev{grid-template-columns:1fr;gap:2rem}.kphoto img{max-height:320px}.kmap{aspect-ratio:4/3}}
+
+/* steps: a real sequence, laid out across */
+.ksteps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;counter-reset:k}
+.ksteps li{counter-increment:k;position:relative;padding-top:3.4rem;border-top:2px solid var(--sage)}
+.ksteps li::before{content:counter(k);position:absolute;top:.9rem;left:0;font-family:"Bitter","Bitter Fallback",serif;font-weight:700;font-size:1.6rem;line-height:1;color:var(--sage)}
+.ksteps strong{display:block;font-size:1.15rem;margin-bottom:.35rem}
+.ksteps span{color:var(--steel)}
+@media (max-width:800px){.ksteps{grid-template-columns:1fr;gap:1.5rem}}
+
+/* faq two columns, closing band */
+.kfaq{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:3rem;align-items:start}
+@media (max-width:820px){.kfaq{grid-template-columns:1fr;gap:1rem}}
+.kband{text-align:center;padding:4rem 0}
+.kband h2,.kband p{margin-inline:auto}
+.kband .kcta{justify-content:center;margin-top:1.5rem}
+
+/* inner pages: centred page heads */
+.hero.sub{text-align:center}
+.hero.sub h1,.hero.sub .lede{margin-inline:auto}
+.hero.sub .bignum{display:inline-flex}
+.hero.sub .facts,.hero.sub .cta-row{justify-content:center}
+
+/* footer: light, logo colours */
+footer{background:var(--paper);color:var(--steel);border-top:1px solid var(--panel)}
+footer h3{color:var(--ink)}
+footer a{color:var(--ink)}
+footer a:hover{color:var(--sage)}
+footer .legal{border-top-color:var(--panel)}
+footer .pay .brands li{border-color:var(--panel);color:var(--steel)}
+.social a{background:#fff;color:var(--ink);border:1px solid var(--panel)}
+
+.gallery{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));grid-auto-rows:240px}
+.gallery figure:first-child{grid-column:span 1;grid-row:span 1}
+.kform .lead label:has(input[type=checkbox]){display:block;font-weight:400;font-size:.9rem;line-height:1.5}
+.kform .lead label:has(input[type=checkbox]) input{width:auto;margin-right:.5rem;vertical-align:middle}
 </style>
 <script type="application/ld+json">
 {
@@ -628,30 +750,30 @@ footer h3{font-size:1.05rem}
 <body class="theme-keystone">
 <div class="progress" aria-hidden="true"></div>
 
-<header class="top">
+<div class="kbar"><div class="wrap"><span>Open 24 hours, every day</span><span>Mobile locksmith in Garner, NC 27529</span></div></div>
+<header class="top khead">
   <div class="wrap">
+    <nav class="knav knav-l" aria-label="Services">
+      <a href="/emergency-locksmith/" >Emergency</a>
+      <a href="/automotive-locksmith/" >Car &amp; keys</a>
+      <a href="/residential-locksmith/" >Home</a>
+      <a href="/commercial-locksmith/" >Business</a>
+    </nav>
     <a class="brand" href="/" aria-label="Garner Locksmith home">
       <img class="logo" src="/img/logo-104.webp?v=9ca9d28b" alt="Garner Locksmith logo" width="52" height="52">
-      <span class="wm"><b><em>Garner</em> Locksmith</b><small>Since 2024 · Garner, NC · 24 hours</small></span>
+      <span class="wm"><b><em>Garner</em> Locksmith</b></span>
     </a>
-    <a class="call" href="tel:+19198670279" aria-label="Call 919-867-0279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg><span>919-867-0279</span></a>
+    <nav class="knav knav-r" aria-label="Company">
+      <a href="/services/" aria-current="page">All services</a>
+      <a href="/about/" >About</a>
+      <a href="/contact/" >Contact</a>
+      <a class="call" href="tel:+19198670279" aria-label="Call 919-867-0279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg><span>919-867-0279</span></a>
+    </nav>
+    <a class="call kcall-m" href="tel:+19198670279" aria-label="Call 919-867-0279"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg></a>
     <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav class="subnav" aria-label="Sections">
-  <div class="wrap">
-    <a href="/" >Home</a>
-    <a href="/emergency-locksmith/" >Emergency</a>
-    <a href="/automotive-locksmith/" >Car</a>
-    <a href="/car-key-replacement/" >Car keys</a>
-    <a href="/residential-locksmith/" >Home &amp; rekey</a>
-    <a href="/commercial-locksmith/" >Business</a>
-    <a href="/services/" aria-current="page">All services</a>
-    <a href="/service-areas/" >Areas</a>
-    <a href="/about/" >About</a>
-    <a href="/contact/" >Contact</a>
-  </div>
-</nav>
+
 <div class="scrim" hidden></div>
 <nav class="drawer" id="menu" aria-label="Main" hidden>
   <div class="drawer-head">
@@ -715,7 +837,7 @@ footer h3{font-size:1.05rem}
         <li><div><strong>Done on the spot.</strong> Everything needed for Panic Bar &amp; Exit Device Installation is on the van, so the job is finished in one visit, with a warranty.</div></li>
       </ol>
       <h2>Service area</h2>
-      <p>Panic Bar &amp; Exit Device Installation is available 24 hours a day across all of Garner, NC, from downtown and White Oak to Timber Drive and Lake Benson. <a href="/service-areas/">See where in Garner we work.</a></p>
+      <p>Panic Bar &amp; Exit Device Installation is available 24 hours a day across all of Garner, NC, from downtown and White Oak to Timber Drive and Lake Benson. <a href="/service-areas/">See every area we cover.</a></p>
       <h2>Panic Bar &amp; Exit Device Installation – common questions</h2>
       <details><summary>Does my business need a panic bar?</summary><p>Fire code requires panic hardware on many commercial exit doors, especially for assembly, retail and educational occupancies. We install to code and can advise on your doors.</p></details>
       <details><summary>Can a panic bar be locked from outside?</summary><p>Yes, with outside trim that lets staff enter with a key while the inside always opens with a push.</p></details>

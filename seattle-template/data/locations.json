@@ -108,7 +108,7 @@
    "Garner Locksmith LLC"
   ],
   "theme": "keystone",
-  "subnav": true,
+  "subnav": false,
   "wiki": "https://en.wikipedia.org/wiki/Garner,_North_Carolina",
   "wiki_once": true,
   "claims": {
@@ -202,30 +202,10 @@
     674
    ]
   ],
-  "gallery_marquee": true,
+  "gallery_marquee": false,
   "hero_alt": "Garner Locksmith technician holding a new car key made on site in Garner, NC",
   "no_prices": true,
   "text_replace": [
-   [
-    "<h1 id=\"h1\">24-hour locksmith in <a href=\"https://en.wikipedia.org/wiki/Garner,_North_Carolina\" rel=\"noopener\" style=\"color:inherit;text-decoration:none\">Garner</a>, NC</h1>",
-    "<h1 id=\"h1\">Garner Locksmith: 24-hour locksmith in <a href=\"https://en.wikipedia.org/wiki/Garner,_North_Carolina\" rel=\"noopener\" style=\"color:inherit;text-decoration:none\">Garner</a>, NC</h1>"
-   ],
-   [
-    "<h2>Serving all of Garner and every road in between</h2>",
-    "<h2>Garner Locksmith serves all of Garner, NC</h2>"
-   ],
-   [
-    "We cover every Garner neighborhood — every neighborhood and more — plus the surrounding area.",
-    "We cover all of Garner: downtown, White Oak, the Timber Drive and Lake Benson side of town, the US-70 corridor and the Cleveland community."
-   ],
-   [
-    "Locals call it the surrounding area; we just call it home. If your phone number starts with 919 and 984, you are in our service area: all of Garner, every road in between and the Wake County and Johnston County communities around it. Flying into RDU and locked out of the rental? We come to the airport, too.",
-    "Garner is home, and it is where our locksmiths spend the day. If your address is in Garner, NC 27529, in Wake County or just over the Johnston County line, you are inside our regular service area and there is no extra trip charge."
-   ],
-   [
-    "<a href=\"/service-areas/\">See every area we cover.</a>",
-    "<a href=\"/service-areas/\">See where in Garner we work.</a>"
-   ],
    [
     "<h1 id=\"h1\">Where we work</h1>",
     "<h1 id=\"h1\">Locksmith service area: Garner, NC</h1>"
