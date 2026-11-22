@@ -1,0 +1,138 @@
+[
+ {
+  "domain": "garner-locksmith.com",
+  "home_title": "Garner Locksmith | 24/7 Locksmith in Garner, NC 27529",
+  "home_desc": "Garner Locksmith: 24/7 mobile locksmith in Garner, NC. Car, home & business lockouts, car keys, lock rekeying and lock changes. Call (919) 867-0279.",
+  "business": "Garner Locksmith",
+  "city": "Garner",
+  "state": "North Carolina",
+  "st": "NC",
+  "zip": "27529",
+  "street": "",
+  "phone": "919-867-0279",
+  "email": "jasonmiller@garner-locksmith.com",
+  "since": "2024",
+  "palette": 0,
+  "ga4": "G-VFG6BZ6JQP",
+  "gtm": "",
+  "maps_embed": "",
+  "form_backend": "web3forms",
+  "web3forms_key": "70f90148-447c-40e6-9aa0-c8a87b435cf6",
+  "redirects": [
+   [
+    "/House-Lockout-Service",
+    "/house-lockout-service/"
+   ],
+   [
+    "/Home-Lock-Re-Key",
+    "/lock-rekeying/"
+   ],
+   [
+    "/House-Lock-Change",
+    "/deadbolt-lock-installation/"
+   ],
+   [
+    "/Business-Lockout-Service",
+    "/commercial-lockout-service/"
+   ],
+   [
+    "/Commercial-Lock-Re-Key",
+    "/lock-rekeying/"
+   ],
+   [
+    "/Business-Lock-Change",
+    "/commercial-locksmith-access-control/"
+   ],
+   [
+    "/Building-Key-Copying",
+    "/key-duplication/"
+   ],
+   [
+    "/Car-Lockout-Service",
+    "/car-lockout-service/"
+   ],
+   [
+    "/Car-Key-Copying",
+    "/spare-car-key/"
+   ],
+   [
+    "/Emergency-Locksmith",
+    "/emergency-lockout-service/"
+   ],
+   [
+    "/privacy",
+    "/privacy/"
+   ],
+   [
+    "/terms",
+    "/terms/"
+   ]
+  ],
+  "neighborhoods": [
+   "White Oak",
+   "Lake Benson",
+   "Timber Drive",
+   "Vandora Springs",
+   "Forest Hills",
+   "Heather Hills",
+   "Greenbrier",
+   "Eagle Ridge",
+   "Aversboro",
+   "Auburn",
+   "Cleveland",
+   "Downtown Garner"
+  ],
+  "nearby": [
+   "Raleigh",
+   "Clayton",
+   "Fuquay-Varina"
+  ],
+  "social": {
+   "facebook": "https://www.facebook.com/profile.php?id=61584834902449",
+   "instagram": "https://www.instagram.com/garnerlocksmith",
+   "youtube": "https://www.youtube.com/@GarnerLocksmith",
+   "tiktok": "https://www.tiktok.com/@garnerlocksmith",
+   "x": "https://x.com/GarnerLocksmith",
+   "pinterest": "https://www.pinterest.com/garnerlocksmith11/"
+  },
+  "place_id": "ChIJKWx47JMSdiYRA5HabqZ5xjc",
+  "cid": "4019033473206096131",
+  "sms": "919-867-0279",
+  "whatsapp": "",
+  "nicknames": [],
+  "area_code": "919 and 984",
+  "region_terms": [
+   "Wake County",
+   "Johnston County"
+  ],
+  "schema_regions": [
+   "Wake County",
+   "Research Triangle"
+  ],
+  "outer_area": "the towns around Garner",
+  "airport": "RDU",
+  "blog": [
+   "lost-car-keys-what-to-do",
+   "how-much-does-a-locksmith-cost",
+   "how-to-spot-a-locksmith-scam",
+   "locked-out-what-not-to-do",
+   "rekey-vs-replace-locks"
+  ],
+  "geo": [
+   35.7113,
+   -78.6142
+  ],
+  "alt_names": [
+   "Garner Locksmith LLC"
+  ],
+  "theme": "",
+  "subnav": true,
+  "wiki": "https://en.wikipedia.org/wiki/Garner,_North_Carolina",
+  "wiki_once": true,
+  "claims": {
+   "licensed": false,
+   "payment_apps": false,
+   "military": false
+  }
+ }
+]
