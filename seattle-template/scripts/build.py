@@ -15,6 +15,7 @@ import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.dirname(__file__))
 import hours
 import claims
+import prices
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -118,6 +119,7 @@ PALETTES = [
     ("#121212", "#ED1B24", "#FFFFFF", "#F6F4F3"),  # 22: black + logo red (Concord Locksmith Shop logo)
     ("#2B1B11", "#348A0B", "#FFFFFF", "#F4F5EF"),  # 23: logo brown + logo green (Locksmith Pro logo)
     ("#1A1510", "#128A12", "#FFFFFF", "#F3F6F1"),  # 24: warm black + logo green (Ready Locksmith logo: green / brown / black)
+    ("#161616", "#E19B3D", "#161616", "#F5F3EC"),  # 25: near-black + logo orange (Garner Locksmith logo: sage shield, orange key, cream text)
 ]
 
 
@@ -1058,6 +1060,7 @@ def build_site(loc, today):
                 t2 = t2.replace(a, b)
             if t2 != t:
                 fp.write_text(t2)
+    prices.apply(d, loc.get("no_prices"))  # optional "no_prices": true → no own prices anywhere (scripts/prices.py)
     if loc.get("redirects"):
         # Optional: 301s from the old site's URLs (Cloudflare Pages _redirects), [[from, to], ...]
         (d / "_redirects").write_text("".join(f"{a} {b} 301\n" for a, b in loc["redirects"]))

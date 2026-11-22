@@ -12,10 +12,10 @@
   "phone": "919-867-0279",
   "email": "jasonmiller@garner-locksmith.com",
   "since": "2024",
-  "palette": 0,
+  "palette": 25,
   "ga4": "G-VFG6BZ6JQP",
   "gtm": "",
-  "maps_embed": "",
+  "maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103695.83437239357!2d-78.60558954999999!3d35.689439050000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x26761293ec786c29%3A0x37c679a66eda9103!2sGarner%20Locksmith!5e0!3m2!1sen!2sus!4v1788363094222!5m2!1sen!2sus",
   "form_backend": "web3forms",
   "web3forms_key": "70f90148-447c-40e6-9aa0-c8a87b435cf6",
   "redirects": [
@@ -68,25 +68,8 @@
     "/terms/"
    ]
   ],
-  "neighborhoods": [
-   "White Oak",
-   "Lake Benson",
-   "Timber Drive",
-   "Vandora Springs",
-   "Forest Hills",
-   "Heather Hills",
-   "Greenbrier",
-   "Eagle Ridge",
-   "Aversboro",
-   "Auburn",
-   "Cleveland",
-   "Downtown Garner"
-  ],
-  "nearby": [
-   "Raleigh",
-   "Clayton",
-   "Fuquay-Varina"
-  ],
+  "neighborhoods": [],
+  "nearby": [],
   "social": {
    "facebook": "https://www.facebook.com/profile.php?id=61584834902449",
    "instagram": "https://www.instagram.com/garnerlocksmith",
@@ -109,11 +92,10 @@
    "Wake County",
    "Research Triangle"
   ],
-  "outer_area": "the towns around Garner",
+  "outer_area": "every road in between",
   "airport": "RDU",
   "blog": [
    "lost-car-keys-what-to-do",
-   "how-much-does-a-locksmith-cost",
    "how-to-spot-a-locksmith-scam",
    "locked-out-what-not-to-do",
    "rekey-vs-replace-locks"
@@ -133,6 +115,161 @@
    "licensed": false,
    "payment_apps": false,
    "military": false
-  }
+  },
+  "gallery": [
+   [
+    "p03.jpg",
+    "Remote-head car key made by {{business}} for a {{city}} driver",
+    576,
+    1024
+   ],
+   [
+    "p36.jpg",
+    "New smart key fob supplied and programmed by {{business}}",
+    768,
+    1024
+   ],
+   [
+    "p23.jpg",
+    "Storefront door lock serviced by a locksmith in {{city}}",
+    900,
+    1200
+   ],
+   [
+    "p45.jpg",
+    "Proximity key fob programmed on site by {{business}}",
+    576,
+    1024
+   ],
+   [
+    "p28.jpg",
+    "Commercial door latch repaired during a lockout call in {{city}}",
+    900,
+    1200
+   ],
+   [
+    "p48.jpg",
+    "Two flip keys cut and programmed as spares in {{city}}",
+    576,
+    1024
+   ],
+   [
+    "p38.jpg",
+    "Glass door lock hardware repaired by {{business}}",
+    900,
+    1200
+   ],
+   [
+    "p25.jpg",
+    "Ignition assembly removed for repair by a {{city}} locksmith",
+    768,
+    1024
+   ],
+   [
+    "p04.jpg",
+    "Key cutting machine on the {{business}} van",
+    675,
+    1200
+   ],
+   [
+    "p34.jpg",
+    "Smart key tested in the car after programming in {{city}}",
+    675,
+    1200
+   ],
+   [
+    "p14.jpg",
+    "Replacement car key handed over by {{business}}",
+    675,
+    1200
+   ],
+   [
+    "p13.jpg",
+    "Glass office door hardware installed in {{city}}",
+    900,
+    1200
+   ],
+   [
+    "p31.jpg",
+    "Transponder key cut and programmed by {{business}}",
+    576,
+    1024
+   ],
+   [
+    "p35.jpg",
+    "Smart key fob replaced by a locksmith in {{city}}",
+    1179,
+    812
+   ]
+  ],
+  "gallery_marquee": true,
+  "hero_alt": "Garner Locksmith car key and remote made on site for a Honda in Garner, NC",
+  "no_prices": true,
+  "text_replace": [
+   [
+    "<h1 id=\"h1\">24-hour locksmith in <a href=\"https://en.wikipedia.org/wiki/Garner,_North_Carolina\" rel=\"noopener\" style=\"color:inherit;text-decoration:none\">Garner</a>, NC</h1>",
+    "<h1 id=\"h1\">Garner Locksmith: 24-hour locksmith in <a href=\"https://en.wikipedia.org/wiki/Garner,_North_Carolina\" rel=\"noopener\" style=\"color:inherit;text-decoration:none\">Garner</a>, NC</h1>"
+   ],
+   [
+    "<h2>Serving all of Garner and every road in between</h2>",
+    "<h2>Garner Locksmith serves all of Garner, NC</h2>"
+   ],
+   [
+    "We cover every Garner neighborhood — every neighborhood and more — plus the surrounding area.",
+    "We cover all of Garner: downtown, White Oak, the Timber Drive and Lake Benson side of town, the US-70 corridor and the Cleveland community."
+   ],
+   [
+    "Locals call it the surrounding area; we just call it home. If your phone number starts with 919 and 984, you are in our service area: all of Garner, every road in between and the Wake County and Johnston County communities around it. Flying into RDU and locked out of the rental? We come to the airport, too.",
+    "Garner is home, and it is where our locksmiths spend the day. If your address is in Garner, NC 27529, in Wake County or just over the Johnston County line, you are inside our regular service area and there is no extra trip charge."
+   ],
+   [
+    "<a href=\"/service-areas/\">See every area we cover.</a>",
+    "<a href=\"/service-areas/\">See where in Garner we work.</a>"
+   ],
+   [
+    "<h1 id=\"h1\">Where we work</h1>",
+    "<h1 id=\"h1\">Locksmith service area: Garner, NC</h1>"
+   ],
+   [
+    "Technicians are positioned around the city, so wherever you are on this list we can usually be there within the hour.",
+    "Our locksmiths work in Garner all day, so wherever you are in town we can usually be there within the hour."
+   ],
+   [
+    "<h2 id=\"h2a\">Garner neighborhoods</h2>\n    <ul class=\"towns\">\n      <li>Garner</li>\n    </ul>\n    <h2 style=\"margin-top:3rem\">Nearby cities</h2>\n    <ul class=\"towns\">\n      <li>Surrounding communities</li>\n    </ul>",
+    "<h2 id=\"h2a\">Where in Garner our locksmiths work</h2>\n    <ul class=\"towns\">\n      <li>Downtown Garner</li>\n      <li>White Oak</li>\n      <li>Timber Drive</li>\n      <li>Lake Benson</li>\n      <li>US-70 corridor</li>\n      <li>Aversboro Road</li>\n      <li>Vandora Springs Road</li>\n      <li>Benson Road (NC-50)</li>\n      <li>Cleveland community</li>\n      <li>ZIP 27529</li>\n    </ul>"
+   ],
+   [
+    "<h2 style=\"margin-top:3rem\">Whatever you call it, we're there</h2>",
+    "<h2 style=\"margin-top:3rem\">One town, one locksmith</h2>"
+   ],
+   [
+    "the surrounding area, the 919 and 984, Wake County and Johnston County — every name for this corner of the map is inside our service area, from RDU to every road in between.",
+    "Garner Locksmith keeps its service area small on purpose: Garner, NC and the roads right around it, in Wake County and just over the Johnston County line. A short drive means a faster arrival and no trip charge."
+   ],
+   [
+    "Not on the list? Call anyway — the dispatcher will tell you right away whether we can reach you today.",
+    "Just outside Garner? Call anyway and we will tell you right away whether we can reach you today."
+   ],
+   [
+    "content=\"Garner Locksmith serves every Garner neighborhood plus the surrounding area and more. Mobile locksmith, 24 hours. Call 919-867-0279.\"",
+    "content=\"Garner Locksmith service area: all of Garner, NC 27529, from downtown and White Oak to Timber Drive and Lake Benson. Mobile locksmith, 24 hours. Call 919-867-0279.\""
+   ],
+   [
+    " — every neighborhood and every other neighborhood — plus the surrounding area.",
+    ", from downtown and White Oak to Timber Drive and Lake Benson."
+   ],
+   [
+    "Do you cover the whole 919 and 984 area?",
+    "Do you cover all of Garner?"
+   ],
+   [
+    "Yes. Every Garner neighborhood plus the surrounding area. Whether you call it the surrounding area or just the 919 and 984, a technician",
+    "Yes. We cover all of Garner, NC 27529. Wherever you are in town, a technician"
+   ],
+   [
+    "it comes to you anywhere in the surrounding area — the 919 and 984 — and the surrounding Wake County and Johnston County communities.",
+    "it comes to you anywhere in Garner, NC."
+   ]
+  ]
  }
 ]

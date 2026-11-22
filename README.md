@@ -9,4 +9,4 @@ Static sites for locksmith clients in the Raleigh, NC area (Garner and nearby to
 - Deploy: Cloudflare Pages, one project per domain, build output `sites/<domain>`
 
 ## Sites
-- garner-locksmith.com – Garner Locksmith, Garner NC 27529 (in progress; not built into `sites/` yet – waiting for logo and photos)
+- garner-locksmith.com – Garner Locksmith, Garner NC 27529. Garner-only site (no area pages), no prices (`"no_prices": true`, see `seattle-template/scripts/prices.py`), no "licensed" claim. Not deployed yet.
