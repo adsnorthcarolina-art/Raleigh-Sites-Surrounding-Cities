@@ -24,6 +24,29 @@ BASE = (T / "base.html").read_text()
 import hashlib
 JS_VER = hashlib.md5(b"".join(sorted(p.read_bytes() for p in (T / "js").glob("*.js")))).hexdigest()[:8]  # cache-busts /js/*.js
 STYLES = (T / "fonts" / "fonts.css").read_text().strip() + "\n" + (T / "styles.css").read_text().strip()
+
+
+def theme_styles(theme):
+    """Optional per-site theme: template/themes/<theme>.css (+ <theme>.fonts.css) restyles the site.
+    A theme with its own fonts file swaps the Barlow families for Bitter (headings) and Figtree (text)."""
+    css = T / "themes" / f"{theme}.css"
+    if not theme or not css.exists():
+        return STYLES
+    fonts = T / "themes" / f"{theme}.fonts.css"
+    base = (T / "styles.css").read_text().strip()
+    if fonts.exists():
+        for a, b_ in (('"Barlow Condensed Fallback"', '"Bitter Fallback"'), ('"Barlow Condensed"', '"Bitter"'),
+                      ('"Barlow Fallback"', '"Figtree Fallback"'), ("Barlow,", "Figtree,"), ('"Barlow"', '"Figtree"')):
+            base = base.replace(a, b_)
+        return fonts.read_text().strip() + "\n" + base + "\n" + css.read_text().strip()
+    return STYLES + "\n" + css.read_text().strip()
+
+
+THEME_PRELOADS = {  # font preloads in base.html, per theme with its own fonts
+    "keystone": [("/fonts/barlowcondensed-700.woff2", "/fonts/bitter-700.woff2"), ("/fonts/barlow-400.woff2", "/fonts/figtree-400.woff2"),
+                 ("/fonts/barlow-600.woff2", "/fonts/figtree-600.woff2")],
+}
+
 FORM = (T / "form.html").read_text()
 BOOK_FORM = (T / "book-form.html").read_text()
 LOCATIONS = json.loads((ROOT / "data" / "locations.json").read_text())
@@ -120,6 +143,7 @@ PALETTES = [
     ("#2B1B11", "#348A0B", "#FFFFFF", "#F4F5EF"),  # 23: logo brown + logo green (Locksmith Pro logo)
     ("#1A1510", "#128A12", "#FFFFFF", "#F3F6F1"),  # 24: warm black + logo green (Ready Locksmith logo: green / brown / black)
     ("#161616", "#E19B3D", "#161616", "#F5F3EC"),  # 25: near-black + logo orange (Garner Locksmith logo: sage shield, orange key, cream text)
+    ("#1F2F2A", "#E19B3D", "#1F2F2A", "#F4F6F3"),  # 26: deep sage + logo orange, for the light "keystone" theme (Garner Locksmith)
 ]
 
 
@@ -587,7 +611,7 @@ def fields(loc):
         "gtm_body": GTM_BODY.replace("{gtm}", gtm) if gtm else "",
         "mark": ('<img class="logo" src="/img/logo-104.webp" alt="{{business}} logo" width="%d" height="52">' % logo_header_width() if (IMG_DIR / "logo.png").exists() else MARK.format(signal=pal["c_signal"], ink=pal["c_ink"])),
         "favicon": "data:image/svg+xml," + MARK.format(signal=pal["c_signal"], ink=pal["c_ink"]).replace("#", "%23").replace("<", "%3C").replace(">", "%3E").replace("'", "%27"),
-        "styles": STYLES,
+        "styles": theme_styles(loc.get("theme")),
         "js_ver": JS_VER,
         "head_extra": "",
         "body_class": ("theme-" + loc["theme"]) if loc.get("theme") else "",
@@ -1058,6 +1082,14 @@ def build_site(loc, today):
             t2 = t
             for a, b in loc["text_replace"]:
                 t2 = t2.replace(a, b)
+            if t2 != t:
+                fp.write_text(t2)
+    if loc.get("theme") in THEME_PRELOADS:
+        for fp in d.rglob("*.html"):
+            t = fp.read_text()
+            t2 = t
+            for a, b_ in THEME_PRELOADS[loc["theme"]]:
+                t2 = t2.replace(f'href="{a}"', f'href="{b_}"')
             if t2 != t:
                 fp.write_text(t2)
     prices.apply(d, loc.get("no_prices"))  # optional "no_prices": true → no own prices anywhere (scripts/prices.py)

@@ -12,7 +12,7 @@
   "phone": "919-867-0279",
   "email": "jasonmiller@garner-locksmith.com",
   "since": "2024",
-  "palette": 25,
+  "palette": 26,
   "ga4": "G-VFG6BZ6JQP",
   "gtm": "",
   "maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103695.83437239357!2d-78.60558954999999!3d35.689439050000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x26761293ec786c29%3A0x37c679a66eda9103!2sGarner%20Locksmith!5e0!3m2!1sen!2sus!4v1788363094222!5m2!1sen!2sus",
@@ -107,7 +107,7 @@
   "alt_names": [
    "Garner Locksmith LLC"
   ],
-  "theme": "",
+  "theme": "keystone",
   "subnav": true,
   "wiki": "https://en.wikipedia.org/wiki/Garner,_North_Carolina",
   "wiki_once": true,
@@ -178,12 +178,6 @@
     1200
    ],
    [
-    "p14.jpg",
-    "Replacement car key handed over by {{business}}",
-    675,
-    1200
-   ],
-   [
     "p13.jpg",
     "Glass office door hardware installed in {{city}}",
     900,
@@ -200,10 +194,16 @@
     "Smart key fob replaced by a locksmith in {{city}}",
     1179,
     812
+   ],
+   [
+    "p00.jpg",
+    "Car key and remote programmed for a Honda in {{city}}",
+    1200,
+    674
    ]
   ],
   "gallery_marquee": true,
-  "hero_alt": "Garner Locksmith car key and remote made on site for a Honda in Garner, NC",
+  "hero_alt": "Garner Locksmith technician holding a new car key made on site in Garner, NC",
   "no_prices": true,
   "text_replace": [
    [

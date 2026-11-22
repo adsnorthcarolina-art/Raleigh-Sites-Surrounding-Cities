@@ -14,7 +14,7 @@ RULES = [
     # product cards and service page badges
     (r"<p>From \$\d+ · ([^<]*)</p>", r"<p>\1</p>"),
     (r" · from \$\d+", ""),
-    (r"From \$\d+ · Free estimate", "Free estimate"),
+    (r"From (?:<b>)?\$\d+(?:</b>)? · Free estimate", "Free estimate"),
     # Service schema offers
     (r',"offers":\{"@type":"Offer","price":"\d+","priceCurrency":"USD","priceSpecification":\{[^}]*\}\}', ""),
     # headings

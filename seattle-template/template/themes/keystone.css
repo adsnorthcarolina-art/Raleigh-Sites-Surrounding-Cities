@@ -1,0 +1,103 @@
+
+/* ======== theme: keystone (light, sage + orange; Bitter headings, Figtree text) ======== */
+:root{--sage:#567468;--tint:#EDF2EE;--shield:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' preserveAspectRatio='none'%3E%3Cpath d='M8 46C8 16 28 2 50 2s42 14 42 44v42L56 116a9 9 0 0 1-12 0L8 88z'/%3E%3C/svg%3E")}
+body{background:#fff;font-size:17px;line-height:1.6}
+h1,h2,h3{letter-spacing:-.012em;line-height:1.12}
+section h2{font-size:clamp(1.7rem,3.2vw,2.35rem);max-width:24ch}
+section h3{font-size:1.2rem}
+section{padding:4rem 0}
+main>section:nth-of-type(even){background:var(--paper)}
+.seam{border-top:0}
+
+/* header: white, logo badge left, phone right */
+.top{background:#fff;color:var(--ink);border-bottom:1px solid var(--panel)}
+.top .wrap{min-height:84px}
+.brand{color:var(--ink)}
+.brand b{font-size:1.3rem;text-transform:none;letter-spacing:-.01em}
+.brand b em{color:var(--sage)}
+.brand small{color:var(--steel);letter-spacing:.02em;text-transform:none;font-size:.8rem;font-weight:400}
+.brand img.logo{width:64px;height:64px;padding:0;background:none;border-radius:0}
+@media (max-width:640px){.brand img.logo{width:48px;height:48px;padding:0}.brand b{font-size:1.05rem}}
+.call{border-radius:999px;padding:.7rem 1.25rem}
+.burger{border-color:var(--panel)}
+.burger span{background:var(--ink)}
+.subnav{background:#fff;border-bottom:1px solid var(--panel)}
+.subnav .wrap{padding:0;gap:0}
+.subnav a{color:var(--steel);border-radius:0;padding:.85rem .9rem;border-bottom:3px solid transparent;font-weight:500}
+.subnav a:hover{color:var(--ink)}
+.subnav a[aria-current]{background:none;color:var(--ink);border-bottom-color:var(--signal);font-weight:600}
+
+/* hero: light, text left, photo right inside the logo's shield shape */
+.hero{background:var(--tint);color:var(--ink);padding:3rem 0 0}
+.hero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);max-width:17ch}
+.hero.sub h1{font-size:clamp(1.9rem,3.8vw,2.8rem)}
+.hero .lede{color:var(--steel);font-size:1.12rem}
+.hero .door{display:none}
+.hero.sub{padding-bottom:3rem}
+.crumb a{color:var(--steel)}
+.meta{color:var(--steel)}
+.hero.photo::before{display:none}
+.hero.photo h1,.hero.photo .lede{text-shadow:none}
+.hero.photo .wrap{padding:3.5rem 0 4rem}
+.hero.photo .wrap>*{max-width:33rem}
+.hero.photo .hero-img{inset:auto;top:50%;right:max(1.5rem,calc((100vw - 1120px)/2));left:auto;transform:translateY(-50%);width:min(430px,36vw);height:auto;aspect-ratio:5/6;object-position:50% 45%;z-index:0;
+  -webkit-mask:var(--shield) center/100% 100% no-repeat;mask:var(--shield) center/100% 100% no-repeat}
+.hero.photo::after{content:"";position:absolute;top:50%;right:max(1.5rem,calc((100vw - 1120px)/2));transform:translate(14px,calc(-50% + 14px));width:min(430px,36vw);aspect-ratio:5/6;background:var(--sage);z-index:-1;
+  -webkit-mask:var(--shield) center/100% 100% no-repeat;mask:var(--shield) center/100% 100% no-repeat}
+.rating.badge{background:#fff;border-color:var(--panel);color:var(--ink)}
+.rating.badge a{color:var(--steel)}
+.stars{-webkit-text-stroke:0}
+.hero .bignum{background:var(--signal);border:0;border-radius:14px;color:var(--signal-ink);padding:.85rem 1.4rem .9rem;font-size:clamp(2rem,4.6vw,2.9rem);backdrop-filter:none;-webkit-backdrop-filter:none;letter-spacing:0}
+.hero .bignum span{color:var(--signal-ink);font-size:.92rem;opacity:.85}
+.hero .bignum:hover{background:var(--signal-hover)}
+.cta-row a{border-radius:999px;border-color:var(--ink);color:var(--ink)}
+.cta-row a.ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
+.cta-row a.ghost:hover,.cta-row a:hover{background:#fff}
+.facts{color:var(--ink);gap:.5rem 1.75rem;font-weight:500}
+.facts li::before{width:.5rem;height:.85rem;background:none;border:solid var(--sage);border-width:0 3px 3px 0;transform:rotate(45deg) translateY(-3px);margin-right:.7rem}
+@media (max-width:860px){
+  .hero.photo::after{display:none}
+  .hero.photo{display:flex;flex-direction:column;padding-top:1.5rem}
+  .hero.photo .hero-img{position:relative;top:auto;right:auto;transform:none;width:min(100% - 2rem,520px);margin:0 auto 2.5rem;aspect-ratio:16/10;object-position:50% 50%;-webkit-mask:none;mask:none;border-radius:18px;display:block}
+  .hero.photo picture{order:2;display:block;text-align:center}
+  .hero.photo .wrap{padding:1rem 0 2rem;margin-top:0;background:none;order:1}
+  .hero.photo .wrap>*{max-width:none}
+  .hero h1{font-size:clamp(2rem,8.5vw,2.6rem)}
+}
+
+/* trust strip */
+.trust{border-top:1px solid var(--panel)}
+.trust .ico{background:var(--tint);color:var(--sage)}
+.trust b{font-size:1.05rem}
+
+/* cards */
+.svc{border:1px solid var(--panel);border-radius:16px;box-shadow:none;padding:1.6rem}
+.svc::before{display:none}
+.svc .ico{background:var(--tint);color:var(--sage);border-radius:12px}
+.svc h3{font-size:1.2rem}
+.svc a.more,.svc h3 a:hover{border-bottom-color:var(--sage)}
+.svc:hover,.rev:hover{box-shadow:0 10px 24px -16px rgba(31,47,42,.45)}
+.svc .mini-call{background:#fff}
+.svc .mini-call svg{color:var(--sage)}
+.pcard img{border-radius:12px}
+.why li{border-top:1px solid var(--panel)}
+.steps li{border-top:1px solid var(--panel)}
+.steps li::before{color:var(--sage);font-size:1.9rem}
+.brandcol h3{border-bottom:2px solid var(--sage);font-size:1.05rem}
+.brands li{border:1px solid var(--panel);border-radius:999px;font-size:.95rem}
+.towns li{border-top:0;padding:.35rem 0}
+details,details:last-of-type{border-color:var(--panel);border-width:1px}
+.offer div{border-top:0;border:1px solid var(--panel);border-radius:14px}
+.offer b{font-size:1.2rem}
+.aside{border-top:0;border:1px solid var(--panel);border-radius:16px}
+.rev{border-left:0;border:1px solid var(--panel);border-radius:16px}
+.gallery figure{border-radius:14px}
+.lead input,.lead select,.lead textarea{border-width:1px;border-radius:10px}
+.lead button.call{border-radius:999px}
+.band{background:var(--ink)}
+.band .bignum{color:var(--signal)}
+main p a:not(.btn):not(.more):not(.ghost):not(.sms),main li a:not(.btn):not(.more){text-decoration-color:var(--sage)}
+footer{padding:3rem 0}
+footer h3{font-size:1.05rem}
+.drawer-head{text-transform:none;letter-spacing:0;font-size:1.25rem}
+.drawer .group{text-transform:none;letter-spacing:0}

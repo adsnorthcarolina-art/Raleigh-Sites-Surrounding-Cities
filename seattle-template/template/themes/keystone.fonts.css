@@ -1,0 +1,7 @@
+@font-face{font-family:"Figtree";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/figtree-400.woff2) format("woff2")}
+@font-face{font-family:"Figtree";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/figtree-600.woff2) format("woff2")}
+@font-face{font-family:"Figtree";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/figtree-600.woff2) format("woff2")}
+@font-face{font-family:"Bitter";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/bitter-700.woff2) format("woff2")}
+@font-face{font-family:"Bitter";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/bitter-700.woff2) format("woff2")}
+@font-face{font-family:"Figtree Fallback";src:local("Arial"),local("Helvetica");size-adjust:100%;ascent-override:95%;descent-override:25%;line-gap-override:0%}
+@font-face{font-family:"Bitter Fallback";src:local("Georgia"),local("Times New Roman");size-adjust:104%;ascent-override:92%;descent-override:24%;line-gap-override:0%}
